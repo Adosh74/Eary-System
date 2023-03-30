@@ -1,0 +1,28 @@
+{
+  "name": "eary-system",
+  "version": "1.0.0",
+  "description": "Project called Eary, which help people to check their hearing problems.",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Adosh74/Eary-System.git"
+  },
+  "author": "Shebl",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Adosh74/Eary-System/issues"
+  },
+  "homepage": "https://github.com/Adosh74/Eary-System#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "nodemon": "^2.0.22",
+    "prettier": "^2.8.7"
+  },
+  "devDependencies": {
+    "eslint": "^8.37.0"
+  }
+}
