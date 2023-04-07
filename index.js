@@ -1,15 +1,15 @@
 import express from 'express';
 import bodyParser from 'body-parser';
+import routes from './src/routes/index.js';
 
 const app = express();
 const PORT = 3000;
 
 //** middleware **/
-// parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: false }));
-// parse application/json
 app.use(bodyParser.json());
 
+app.use(routes);
 app.get('/', (_req, res) => {
   res.json({
     message: 'Eary-System web app 💻✌',
