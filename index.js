@@ -4,6 +4,7 @@ import helmet from 'helmet';
 import cors from 'cors';
 import rateLimit from 'express-rate-limit';
 import routes from './src/routes/index.js';
+import sequelize from './config/database.js';
 
 const app = express();
 const PORT = 3000;
