@@ -1,32 +1,70 @@
-.App {
+body {
+  background-color: #344a72;
+  font-family: "Roboto", sans-serif;
+  margin: 204px;
+}
+
+.Login-box{
+  width: 360px;
+  height: 301px;
+  margin: auto;
+  background-color: white;
+  border-radius: 30px;
+}
+
+
+h1 {
+  text-align: center;
+  padding-top: 15px;
+}
+
+h4 {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+form {
+  width: 300px;
+  margin-left: 20px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+form label {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  margin-top: 20px;
+  font-size: 18px;
 }
 
-.App-link {
-  color: #61dafb;
+form input {
+  width: 100%;
+  padding: 7px;
+  border: none;
+  border: 1px solid gray;
+  border-radius: 6px;
+  outline: none;
 }
+.submit {
+  width: 320px;
+  height: 35px;
+  margin-top: 20px;
+  border: none;
+  background-color: #49c1a2;
+  color: white;
+  font-size: 18px;
+}
+p {
+  text-align: center;
+  padding-top: 20px;
+  font-size: 15px;
+}
+.para-2 {
+  text-align: center;
+  color: white;
+  font-size: 15px;
+  margin-top: 41px;
+}
+.para-2 a {
+  color: gold;
+}
+
 
 @keyframes App-logo-spin {
   from {
