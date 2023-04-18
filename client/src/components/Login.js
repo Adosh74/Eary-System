@@ -12,7 +12,7 @@ function Login() {
         <button class='submit'>Login</button>
         <closeform></closeform></form>
         <p class="para-2">
-      Are you Normal User? <a href="">Log in as user</a>
+      Are you Normal User? <a href="">Log in as User</a>
     </p>
     </div>
   )
