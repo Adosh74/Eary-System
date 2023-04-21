@@ -9,6 +9,9 @@ const {
   DB_USERNAME,
   DB_PASSWORD,
   DB_DATABASE,
+  BCRYPT_PASSWORD,
+  SALT_ROUNDS,
+  TOKEN_SECRET,
   // eslint-disable-next-line no-undef
 } = process.env;
 
@@ -19,4 +22,7 @@ export default {
   db_username: DB_USERNAME,
   db_password: DB_PASSWORD,
   db_database: DB_DATABASE,
+  pepper: BCRYPT_PASSWORD,
+  salt: SALT_ROUNDS,
+  tokenSecret: TOKEN_SECRET,
 };

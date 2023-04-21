@@ -21,3 +21,5 @@ export const deleteUser = (req, res) => {
     message: 'delete for users work',
   });
 };
+
+export const authenticate = () => {};
