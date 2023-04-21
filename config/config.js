@@ -12,6 +12,8 @@ const {
   BCRYPT_PASSWORD,
   SALT_ROUNDS,
   TOKEN_SECRET,
+  PORT,
+  HOST,
   // eslint-disable-next-line no-undef
 } = process.env;
 
@@ -25,4 +27,6 @@ export default {
   pepper: BCRYPT_PASSWORD,
   salt: SALT_ROUNDS,
   tokenSecret: TOKEN_SECRET,
+  port: PORT,
+  host: HOST,
 };

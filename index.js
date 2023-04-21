@@ -4,10 +4,12 @@ import helmet from 'helmet';
 import cors from 'cors';
 import rateLimit from 'express-rate-limit';
 import routes from './src/routes/index.js';
+import config from './config/config.js';
 // import sequelize from './config/database.js';
 // import * as models from './src/models/index.model.js';
 const app = express();
-const PORT = 3000;
+const PORT = config.port ?? 3000;
+const HOST = config.host ?? 'localhost';
 
 //** middleware **/
 app.use(helmet()); // adds various HTTP headers to secure the app
@@ -32,6 +34,6 @@ app.get('/', (_req, res) => {
   });
 });
 
-app.listen(PORT, () => {
-  console.log(`Serving running on http://localhost:${PORT}`);
+app.listen(PORT, HOST, () => {
+  console.log(`Serving running on http://${HOST}:${PORT}`);
 });
