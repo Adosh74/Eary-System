@@ -6,7 +6,10 @@ const routes = Router();
 routes
   .route('/')
   .get(controller.getUsers)
-  .post(controller.createUser)
+  .post(controller.createUser);
+// routes with specific id
+routes
+  .route('/:id')
   .put(controller.updateUser)
   .delete(controller.deleteUser);
 
