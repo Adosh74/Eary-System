@@ -28,6 +28,7 @@ export const createUser = async (req, res) => {
       email: data.email,
       password: hashPassword(data.password),
       phone: data.phone,
+      createdAt: new Date(),
     };
 
     const user = await model.user.create(userObj);
