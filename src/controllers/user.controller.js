@@ -1,6 +1,10 @@
 import model from './../models/index.model.js';
 import hashPassword from './../utilities/hashPassword.js';
-//* +[1] get all users *//
+import config from '../../config/config.js';
+import bcrypt from 'bcrypt';
+import jwt from 'jsonwebtoken';
+
+//**  +[1] get all users *//
 export const getUsers = async (_req, res) => {
   try {
     // Get users
@@ -18,7 +22,32 @@ export const getUsers = async (_req, res) => {
     });
   }
 };
-//* +[2] create new user *//
+
+//** +[2] get specific user **//
+export const getOneUser = async (req, res) => {
+  try {
+    // get user id from params and check if existing
+    const id = req.params.id;
+    const user = await model.user.findOne({ where: { id: id } });
+
+    if (!user) {
+      return res.status(400).json({
+        message: 'User not found',
+      });
+    }
+
+    return res.status(200).json({
+      message: 'User found successfully',
+      data: user,
+    });
+  } catch (error) {
+    return res.status(500).json({
+      message: 'Internal server error',
+    });
+  }
+};
+
+//**  +[3] create new user *//
 export const createUser = async (req, res) => {
   try {
     // get data from body
@@ -43,7 +72,8 @@ export const createUser = async (req, res) => {
     });
   }
 };
-//* +[3] update specific user *//
+
+//**  +[4] update specific user *//
 export const updateUser = async (req, res) => {
   try {
     // get id from from param
@@ -77,7 +107,8 @@ export const updateUser = async (req, res) => {
     });
   }
 };
-//* +[4] delete specific user *//
+
+//**  +[5] delete specific user *//
 export const deleteUser = async (req, res) => {
   try {
     // get id from the param and check existing user
@@ -99,4 +130,43 @@ export const deleteUser = async (req, res) => {
   }
 };
 
-export const authenticate = () => {};
+//** +[6] authenticate user and generate token **//
+export const authenticate = async (req, res) => {
+  try {
+    // get email and password from body
+    const { email, password } = req.body;
+
+    // check if email exists or not
+    const user = await model.user.findOne({
+      where: { email: email },
+    });
+    if (!email) {
+      return res.status(400).json({
+        message: 'Email or Password wrong',
+      });
+    }
+
+    // check validity of password
+    const isValidPassword = await bcrypt.compare(
+      `${password}${config.pepper}`,
+      user.password
+    );
+
+    if (!isValidPassword) {
+      return res.status(400).json({
+        message: 'Email or Password wrong',
+      });
+    }
+
+    const token = jwt.sign({ user_id: user.id }, config.tokenSecret);
+
+    return res.status(200).json({
+      message: 'user logged in successfully',
+      token: token,
+    });
+  } catch (error) {
+    return res.status(500).json({
+      message: 'Internal Server Error',
+    });
+  }
+};

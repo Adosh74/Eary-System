@@ -10,6 +10,7 @@ routes
 // routes with specific id
 routes
   .route('/:id')
+  .get(controller.getOneUser)
   .put(controller.updateUser)
   .delete(controller.deleteUser);
 
