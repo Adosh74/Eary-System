@@ -1,2 +1,5 @@
 # Eary-System
-Project called "Eary", which help people to check their hearing problems.
+
+A project called "Eary", helps people to check their hearing problems.
+
+# Usage
