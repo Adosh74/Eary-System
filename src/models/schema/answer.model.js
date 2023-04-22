@@ -17,5 +17,13 @@ export default (db, type) => {
     grade: {
       type: type.INTEGER,
     },
+    createdAt: {
+      type: type.DATE,
+      allowNull: true,
+    },
+    updatedAt: {
+      type: type.DATE,
+      allowNull: true,
+    },
   });
 };

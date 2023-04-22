@@ -30,11 +30,11 @@ export default (db, type) => {
     },
     createdAt: {
       type: type.DATE,
-      defaultValue: new Date(),
+      allowNull: true,
     },
     updatedAt: {
       type: type.DATE,
-      defaultValue: new Date(),
+      allowNull: true,
     },
   });
 };

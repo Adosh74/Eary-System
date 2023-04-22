@@ -19,5 +19,13 @@ export default (db, type) => {
       type: type.BOOLEAN,
       defaultValue: false,
     },
+    createdAt: {
+      type: type.DATE,
+      allowNull: true,
+    },
+    updatedAt: {
+      type: type.DATE,
+      allowNull: true,
+    },
   });
 };
