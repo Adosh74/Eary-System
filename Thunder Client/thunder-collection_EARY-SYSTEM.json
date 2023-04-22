@@ -1,7 +1,7 @@
 {
     "client": "Thunder Client",
     "collectionName": "EARY-SYSTEM",
-    "dateExported": "2023-04-21T12:37:14.490Z",
+    "dateExported": "2023-04-22T13:59:32.178Z",
     "version": "1.1",
     "folders": [
         {
@@ -24,6 +24,20 @@
             "containerId": "",
             "created": "2023-04-07T14:16:50.299Z",
             "sortNum": 40000
+        },
+        {
+            "_id": "5011d16b-57b5-4440-b4a8-624b2afe8e55",
+            "name": "exam",
+            "containerId": "",
+            "created": "2023-04-22T04:58:20.773Z",
+            "sortNum": 50000
+        },
+        {
+            "_id": "72b847d2-4ca1-4e12-a401-67baac309e1e",
+            "name": "Auth",
+            "containerId": "",
+            "created": "2023-04-22T13:47:00.914Z",
+            "sortNum": 60000
         }
     ],
     "requests": [
@@ -201,6 +215,131 @@
             "sortNum": 130000,
             "created": "2023-04-07T14:18:19.057Z",
             "modified": "2023-04-07T14:18:23.930Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "d9cc3808-bf72-4be3-b07b-27e2b5a7f106",
+            "colId": "d3d057cf-6ff0-4908-9236-3f5a25b8224b",
+            "containerId": "5011d16b-57b5-4440-b4a8-624b2afe8e55",
+            "name": "get all exams",
+            "url": "[::1]:3000/exam",
+            "method": "GET",
+            "sortNum": 150000,
+            "created": "2023-04-22T04:58:31.542Z",
+            "modified": "2023-04-22T04:59:10.747Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "af12c12c-63df-44af-af30-a2baed82d1e9",
+            "colId": "d3d057cf-6ff0-4908-9236-3f5a25b8224b",
+            "containerId": "5011d16b-57b5-4440-b4a8-624b2afe8e55",
+            "name": "create new exam",
+            "url": "",
+            "method": "GET",
+            "sortNum": 160000,
+            "created": "2023-04-22T07:24:41.596Z",
+            "modified": "2023-04-22T07:24:41.596Z",
+            "headers": []
+        },
+        {
+            "_id": "192fb439-417b-48f6-a4de-0d42cefa668a",
+            "colId": "d3d057cf-6ff0-4908-9236-3f5a25b8224b",
+            "containerId": "5011d16b-57b5-4440-b4a8-624b2afe8e55",
+            "name": "create new exam",
+            "url": "[::1]:3000/exam",
+            "method": "POST",
+            "sortNum": 170000,
+            "created": "2023-04-22T07:24:54.951Z",
+            "modified": "2023-04-22T07:25:46.886Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\": \"Internet Application\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "a5546060-acaf-4b6a-9077-1a9c00a355c6",
+            "colId": "d3d057cf-6ff0-4908-9236-3f5a25b8224b",
+            "containerId": "5011d16b-57b5-4440-b4a8-624b2afe8e55",
+            "name": "get specific exam",
+            "url": "[::1]:3000/exam/1",
+            "method": "GET",
+            "sortNum": 180000,
+            "created": "2023-04-22T07:34:48.873Z",
+            "modified": "2023-04-22T07:35:07.026Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "83519c56-7542-4774-8cab-7b6784f49372",
+            "colId": "d3d057cf-6ff0-4908-9236-3f5a25b8224b",
+            "containerId": "5011d16b-57b5-4440-b4a8-624b2afe8e55",
+            "name": "update exam or add question to exam",
+            "url": "[::1]:3000/exam/1",
+            "method": "PUT",
+            "sortNum": 190000,
+            "created": "2023-04-22T08:10:07.597Z",
+            "modified": "2023-04-22T08:46:18.292Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"questions\": {\n    \"text\": \"asd is125553\",\n    \"opions\": {\n      \"one\": \"physical component\"\n    },\n    \"answer\": \"one\"\n  }\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "9417940a-eb06-4372-92c5-d1a8ab3801b6",
+            "colId": "d3d057cf-6ff0-4908-9236-3f5a25b8224b",
+            "containerId": "5011d16b-57b5-4440-b4a8-624b2afe8e55",
+            "name": "delete exam",
+            "url": "[::1]:3000/exam/1",
+            "method": "DELETE",
+            "sortNum": 200000,
+            "created": "2023-04-22T09:00:17.424Z",
+            "modified": "2023-04-22T09:00:29.507Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "31e502ff-9c0e-4baa-ae69-a51eb186d778",
+            "colId": "d3d057cf-6ff0-4908-9236-3f5a25b8224b",
+            "containerId": "72b847d2-4ca1-4e12-a401-67baac309e1e",
+            "name": "login",
+            "url": "[::1]:3000/login",
+            "method": "POST",
+            "sortNum": 220000,
+            "created": "2023-04-22T13:47:40.105Z",
+            "modified": "2023-04-22T13:48:19.602Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"email\": \"test@test.test\",\n  \"password\": \"123456\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "3c947088-5259-4a45-b9c9-a5a2b72f9c58",
+            "colId": "d3d057cf-6ff0-4908-9236-3f5a25b8224b",
+            "containerId": "f0595793-b931-4ae4-a279-f1486c3d0f87",
+            "name": "get specific user",
+            "url": "[::1]:3000/user/1",
+            "method": "GET",
+            "sortNum": 230000,
+            "created": "2023-04-22T13:56:56.688Z",
+            "modified": "2023-04-22T13:57:28.683Z",
             "headers": [],
             "params": [],
             "tests": []
