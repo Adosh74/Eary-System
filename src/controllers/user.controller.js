@@ -1,6 +1,6 @@
 import model from './../models/index.model.js';
 import hashPassword from './../utilities/hashPassword.js';
-
+//* +[1] get all users *//
 export const getUsers = async (_req, res) => {
   try {
     // Get users
@@ -18,7 +18,7 @@ export const getUsers = async (_req, res) => {
     });
   }
 };
-
+//* +[2] create new user *//
 export const createUser = async (req, res) => {
   try {
     // get data from body
@@ -42,7 +42,7 @@ export const createUser = async (req, res) => {
     });
   }
 };
-
+//* +[3] update specific user *//
 export const updateUser = async (req, res) => {
   try {
     // get id from from param
@@ -60,6 +60,7 @@ export const updateUser = async (req, res) => {
         name: name,
         email: email,
         phone: phone,
+        updateAt: new Date(),
       },
       {
         where: { id: id },
@@ -75,7 +76,7 @@ export const updateUser = async (req, res) => {
     });
   }
 };
-
+//* +[4] delete specific user *//
 export const deleteUser = async (req, res) => {
   try {
     // get id from the param and check existing user
