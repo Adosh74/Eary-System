@@ -130,7 +130,33 @@ export const deleteUser = async (req, res) => {
   }
 };
 
-//** +[6] authenticate user and generate token **//
+//** +[6] Register **/
+export const register = async (req, res) => {
+  try {
+    // get data from the body
+    const data = req.body;
+
+    const userObj = {
+      name: data.name,
+      email: data.email,
+      password: hashPassword(data.password),
+      phone: data.phone,
+    };
+
+    const user = await model.user.create(userObj);
+
+    return res.status(201).json({
+      message: 'user created successfully waiting for admin approval',
+      data: user,
+    });
+  } catch (error) {
+    return res.status(500).json({
+      message: 'Internal server error',
+    });
+  }
+};
+
+//** +[7] authenticate user and generate token **//
 export const authenticate = async (req, res) => {
   try {
     // get email and password from body
@@ -158,6 +184,13 @@ export const authenticate = async (req, res) => {
       });
     }
 
+    // check user is approved or not
+    if (!user.isActive) {
+      return res.status(404).json({
+        message: 'Waiting for admin approval',
+      });
+    }
+
     const token = jwt.sign({ user_id: user.id }, config.tokenSecret);
 
     return res.status(200).json({
@@ -167,6 +200,39 @@ export const authenticate = async (req, res) => {
   } catch (error) {
     return res.status(500).json({
       message: 'Internal Server Error',
+    });
+  }
+};
+
+//** +[8] approve user to can login **/
+export const approveUser = async (req, res) => {
+  try {
+    // get user id
+    const id = req.params.id;
+
+    // check is user exists or not
+    const user = await model.user.findOne({ where: { id: id } });
+    if (!user) {
+      return res.status(400).json({
+        message: 'cant find this user',
+      });
+    }
+    // now user is already existing. approve
+    await model.user.update(
+      {
+        isActive: true,
+      },
+      {
+        where: { id: id },
+      }
+    );
+
+    return res.status(200).json({
+      message: 'user approved successfully',
+    });
+  } catch (error) {
+    return res.status(500).json({
+      message: 'Internal server error',
     });
   }
 };
