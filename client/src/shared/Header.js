@@ -16,7 +16,7 @@ const Header = () => {
                  <Navbar.Brand > Eary System </Navbar.Brand>
                   <Nav className="me-auto">
  
-                  <Link className="AD-header" to="/home">Home</Link>
+               
                     <Link className="AD-header" to="/login_admin">Admin</Link>
                     <Link className="AD-header" to="/login_user">User</Link> 
 

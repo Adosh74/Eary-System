@@ -7,13 +7,15 @@ const Register = () => {
     return (
       <div className="page_user">
       <Form>
-          <Form.Group className="mb-3" controlId="formBasicEmail">
           <Alert  variant="danger" className=" p-1">
             Error —check it out!
           </Alert>
-          <Form.Label>Name</Form.Label>
+          
+           <Form.Label>Name</Form.Label>
             <Form.Control type="text" placeholder="Full Name" />
-           
+
+
+          <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Label>Email address</Form.Label>
             <Form.Control type="email" placeholder="Enter email" />
             <Form.Text className="text-muted">
@@ -25,6 +27,12 @@ const Register = () => {
             <Form.Label>Password</Form.Label>
             <Form.Control type="password" placeholder="Password" />
           </Form.Group>
+
+          <Form.Group className="mb-3" controlId="formBasicPassword">
+            <Form.Label>Phone </Form.Label>
+            <Form.Control type="integer" placeholder="phone number" />
+          </Form.Group>
+          
           <Form.Group className="mb-3" controlId="formBasicCheckbox">
             <Form.Check type="checkbox" label="Check me out" />
           </Form.Group>

@@ -3,7 +3,9 @@ import App from "./App";
 import Login_user from "./pages/authentication/Login_user";
 import Login_admin from "./pages/authentication/Login_admin";
 import Register from "./pages/authentication/Register";
-import Home from "./pages/home/Home";
+
+import Home_admin from "./pages/home/Home_admin";
+import Home_user from "./pages/home/Home_user";
 
 export const routes = createBrowserRouter([
     {
@@ -11,8 +13,12 @@ export const routes = createBrowserRouter([
         element: <App />,
         children:[
             {
-                path: "/",
-                element: <Home />,
+                path: "/home_admin",
+                element: <Home_admin />,
+              },
+              {
+                path: "/home_user",
+                element: <Home_user />,
               },
               {
                   path: "/login_admin",
@@ -28,7 +34,7 @@ export const routes = createBrowserRouter([
                 },
                 {
                     path: "*",
-                    element: <Navigate to={"/"} />,
+                    element: <Navigate to={"/login_user"} />,
                   },
         ]
       }
