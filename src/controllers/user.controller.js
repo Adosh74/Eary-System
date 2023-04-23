@@ -57,6 +57,7 @@ export const createUser = async (req, res) => {
       email: data.email,
       password: hashPassword(data.password),
       phone: data.phone,
+      isActive: true,
       createdAt: new Date(),
     };
 
