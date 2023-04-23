@@ -3,7 +3,6 @@ import logo from './logo.svg';
 import './App.css';
 import { Login } from "./components/Login";
 import { Register } from "./components/Register";
-import {Loginasuser} from './components/Loginasuser';
 function App() {
   const [currentForm, setCurrentForm] = useState('login');
 
@@ -15,7 +14,7 @@ function App() {
   return (
     <div className="App">
       {
-        currentForm === "login" ? <Login onFormSwitch={toggleForm} />  : <Loginasuser onFormSwitch={toggleForm}  />  
+        currentForm === "login" ? <Login onFormSwitch={toggleForm} />  : <Register onFormSwitch={toggleForm}  />  
         ||  <Register onFormSwitch={toggleForm} />
       }
     </div>
