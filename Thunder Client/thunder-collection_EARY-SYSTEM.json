@@ -1,7 +1,7 @@
 {
     "client": "Thunder Client",
     "collectionName": "EARY-SYSTEM",
-    "dateExported": "2023-04-22T13:59:32.178Z",
+    "dateExported": "2023-04-23T09:45:05.536Z",
     "version": "1.1",
     "folders": [
         {
@@ -98,11 +98,11 @@
             "colId": "d3d057cf-6ff0-4908-9236-3f5a25b8224b",
             "containerId": "f0595793-b931-4ae4-a279-f1486c3d0f87",
             "name": "delete user",
-            "url": "[::1]:3000/user/1",
+            "url": "[::1]:3000/user/2",
             "method": "DELETE",
             "sortNum": 40000,
             "created": "2023-04-07T13:49:27.951Z",
-            "modified": "2023-04-21T12:35:39.787Z",
+            "modified": "2023-04-23T09:43:03.070Z",
             "headers": [],
             "params": [],
             "tests": []
@@ -320,12 +320,12 @@
             "method": "POST",
             "sortNum": 220000,
             "created": "2023-04-22T13:47:40.105Z",
-            "modified": "2023-04-22T13:48:19.602Z",
+            "modified": "2023-04-23T09:43:44.789Z",
             "headers": [],
             "params": [],
             "body": {
                 "type": "json",
-                "raw": "{\n  \"email\": \"test@test.test\",\n  \"password\": \"123456\"\n}",
+                "raw": "{\n   \"email\": \"hamdysheblm@gmail.com\",\n  \"password\": \"123456\"\n}",
                 "form": []
             },
             "tests": []
@@ -340,6 +340,39 @@
             "sortNum": 230000,
             "created": "2023-04-22T13:56:56.688Z",
             "modified": "2023-04-22T13:57:28.683Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "2da11889-0de3-4fbd-90a3-3ad2a62dd324",
+            "colId": "d3d057cf-6ff0-4908-9236-3f5a25b8224b",
+            "containerId": "72b847d2-4ca1-4e12-a401-67baac309e1e",
+            "name": "register",
+            "url": "[::1]:3000/register",
+            "method": "POST",
+            "sortNum": 240000,
+            "created": "2023-04-23T09:10:37.520Z",
+            "modified": "2023-04-23T09:14:01.001Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\": \"Mohamed Shebl\",\n  \"email\": \"hamdysheblm@gmail.com\",\n  \"password\": \"123456\",\n  \"phone\": \"01151119846\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "4602902f-60a5-4654-b658-6ae673e128ac",
+            "colId": "d3d057cf-6ff0-4908-9236-3f5a25b8224b",
+            "containerId": "72b847d2-4ca1-4e12-a401-67baac309e1e",
+            "name": "approve user",
+            "url": "[::1]:3000/approve/3",
+            "method": "PUT",
+            "sortNum": 250000,
+            "created": "2023-04-23T09:34:13.660Z",
+            "modified": "2023-04-23T09:43:54.394Z",
             "headers": [],
             "params": [],
             "tests": []
