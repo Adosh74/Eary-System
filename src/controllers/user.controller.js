@@ -52,6 +52,18 @@ export const createUser = async (req, res) => {
   try {
     // get data from body
     const data = req.body;
+
+    // check if email existing
+    const email = await model.user.findOne({
+      where: { email: data.email },
+    });
+
+    if (email) {
+      return res.status(400).json({
+        message: 'this email already used',
+      });
+    }
+
     const userObj = {
       name: data.name,
       email: data.email,
@@ -136,6 +148,17 @@ export const register = async (req, res) => {
   try {
     // get data from the body
     const data = req.body;
+
+    // check if email existing
+    const email = await model.user.findOne({
+      where: { email: data.email },
+    });
+
+    if (email) {
+      return res.status(400).json({
+        message: 'this email already used',
+      });
+    }
 
     const userObj = {
       name: data.name,
