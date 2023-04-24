@@ -1,11 +1,12 @@
 import { Router } from 'express';
 import * as controller from './../../controllers/user.controller.js';
+import { isAuthenticated } from '../../middleware/authentication.middleware.js';
 
 const routes = Router();
 
 routes
   .route('/')
-  .get(controller.getUsers)
+  .get(isAuthenticated, controller.getUsers)
   .post(controller.createUser);
 // routes with specific id
 routes
