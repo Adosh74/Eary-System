@@ -1,8 +1,10 @@
 import React from "react";
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import './Login.css';
+import { Link } from "react-router-dom";
 import Alert from 'react-bootstrap/Alert';
+import './Login.css';
+
 
 export const Login_admin = () => {
     
@@ -29,9 +31,11 @@ export const Login_admin = () => {
         <Form.Group className="mb-3" controlId="formBasicCheckbox">
           <Form.Check type="checkbox" label="Check me out" />
         </Form.Group>
-        <Button variant="primary" type="submit" className="submit">
-          Submit
+        <Link  to="/home_admin">
+        <Button variant="primary" type="submit"  className="submit">
+        Submit
         </Button>
+        </Link>  
       </Form>
      
       </div>
