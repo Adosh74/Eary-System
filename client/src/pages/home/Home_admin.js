@@ -8,18 +8,37 @@ const Home_admin = () => {
       <div className="intro">
 <h1 className="intro-title">Hello  Admin</h1>
 <p>
-  kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk
+  Here You can create and update Quiz
 </p>
-<p>
-  kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk
-</p>
-
-<Link to="#">
+<Link to="#" className="link">
 <button className="btn">
   Quiz
 </button>
 
 </Link>
+
+<p>
+  Here you can approve their account 
+</p>
+
+<Link to="#" className="link">
+<button className="btn">
+  Approve
+</button>
+</Link>
+<br></br>
+<br></br>
+<p>
+  Here you can Update Your profile 
+</p>
+<Link to="#" className="link">
+<button className="btn" >
+  Update Your profile
+</button>
+</Link>
+<br></br>
+<br></br>
+<br></br>
 
       </div>
          </div>
