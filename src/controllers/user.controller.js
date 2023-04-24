@@ -215,7 +215,13 @@ export const authenticate = async (req, res) => {
       });
     }
 
-    const token = jwt.sign({ user_id: user.id }, config.tokenSecret);
+    const token = jwt.sign(
+      {
+        user_id: user.id,
+        isAdmin: user.isAdmin,
+      },
+      config.tokenSecret
+    );
 
     return res.status(200).json({
       message: 'user logged in successfully',
