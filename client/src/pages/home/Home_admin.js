@@ -1,7 +1,6 @@
 import React from "react";
 import'./Home_admin.css'
 import { Link } from "react-router-dom";
-
 const Home_admin = () => {
     return (
          <div className="container">
@@ -10,7 +9,7 @@ const Home_admin = () => {
 <p>
   Here You can create and update Quiz
 </p>
-<Link to="#" className="link">
+<Link to="../admin/quiz" className="link">
 <button className="btn">
   Quiz
 </button>
