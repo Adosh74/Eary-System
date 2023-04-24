@@ -25,7 +25,7 @@ export const routes = createBrowserRouter([
                   element: <Login_admin />,
                 },
                 {
-                  path: "/login_user",
+                  path: "/",
                   element: <Login_user />,
                 },
                 {
@@ -34,7 +34,7 @@ export const routes = createBrowserRouter([
                 },
                 {
                     path: "*",
-                    element: <Navigate to={"/login_user"} />,
+                    element: <Navigate to={"/"} />,
                   },
         ]
       }
