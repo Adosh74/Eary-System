@@ -1,61 +1,42 @@
-import React from "react";
-import'./Home_admin.css'
-import { Link } from "react-router-dom";
+import React from 'react';
+import './Home_admin.css';
+import { Link } from 'react-router-dom';
 
 const Home_admin = () => {
-    return (
-         <div className="container">
+  return (
+    <div className="container">
       <div className="intro">
-<h1 className="intro-title">Hello  Admin</h1>
-<p>
-  Here You can create and update Quiz
-</p>
-<<<<<<< HEAD
-<Link to="../admin/quiz" className="link-1">
-<button class="btn btn1"> 
-Quiz
-</button>
-=======
-<Link to="/quiz" className="link-1">
-<button class="btn btn1"> Quiz</button>
->>>>>>> 92b7feb2d06ba14b85c49cbafcf6906f8e15c89d
+        <h1 className="intro-title">Hello Admin</h1>
+        <p>Here You can create and update Quiz</p>
+        <Link to="../admin/quiz" className="link-1">
+          <button class="btn btn1">Quiz</button>
+        </Link>
 
-</Link>
+        <p>Here you can approve their account</p>
 
-<p>
-  Here you can approve their account 
-</p>
-
-<Link to="/approve" className="link-2">
-<button class="btn btn2">Approve</button>
-
-</Link>
-<br></br>
-<br></br>
-<p>
-  Here you can Update Your profile 
-</p>
-<<<<<<< HEAD
-<Link to="/quiz" className="link-3">
-=======
-<Link to="/update" className="link-3">
->>>>>>> 92b7feb2d06ba14b85c49cbafcf6906f8e15c89d
-<button class="btn btn3"> Update</button>
-
-</Link>
-<br></br>
-<br></br>
-<br></br>
-<br></br>
-<br></br>
-<br></br><br></br>
-<br></br>
-<br></br><br></br><br></br>
-<br></br>
-
-
+        <Link to="/approve" className="link-2">
+          <button class="btn btn2">Approve</button>
+        </Link>
+        <br></br>
+        <br></br>
+        <p>Here you can Update Your profile</p>
+        <Link to="/quiz" className="link-3">
+          <button class="btn btn3"> Update</button>
+        </Link>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
       </div>
-         </div>
-    );
+    </div>
+  );
 };
-  export default Home_admin;
+export default Home_admin;
