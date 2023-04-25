@@ -6,7 +6,7 @@ import Register from './pages/authentication/Register';
 import Home_admin from './pages/home/Home_admin';
 import Update_user from './components/Update_user';
 import Home_user from './pages/home/Home_user';
-import Quiz from './pages/admin/Quiz';
+import Quiz from './pages/admin/quiz';
 import Approve from './pages/admin/approve';
 import Update from './pages/admin/update';
 import Exam from './components/Exam';

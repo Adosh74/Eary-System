@@ -1,9 +1,17 @@
 import React from "react";
 import './approve.css'
-
+import Button from 'react-bootstrap/Button';
+import { Link } from "react-router-dom";
  const Approve = () => {
     return(
         <div >
+             <div className="head" style={{paddingBottom:"0px",paddingRight:"1150px"}}>
+                <Link  to="/home_admin">
+                <Button variant="primary" type="submit"  style={{backgroundColor:"black"}} >
+                Home
+                </Button>
+                </Link>  
+             </div>
 <div class="card-body">
 
 <table class="table table-bordered table-striped">
@@ -34,10 +42,11 @@ import './approve.css'
                     </tr>
                  
         
-    </tbody>
-</table>
-
-</div> </div>
+        </tbody>
+    </table>
+    
+  </div>
+</div>
     );
  };
  export default Approve;

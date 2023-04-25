@@ -4,13 +4,22 @@ import img2 from './edit.jpg'
 import img3 from './sevenup.jpg'
 import './Quiz.css'
 import { Link } from 'react-router-dom';
+import Button from 'react-bootstrap/Button';
+
 
  const Quiz =()=>{
     return(
+        <div >
+        <div className="head" style={{paddingBottom:"0px",paddingRight:"1150px"}}>
+        <Link  to="/home_admin">
+        <Button variant="primary" type="submit"  style={{backgroundColor:"black"}} >
+        Home
+        </Button>
+        </Link>  
+        </div>
         <div class="containe">
+           
 
-
-          
             <div class="card">
 
                 <Link to ="#"> 
@@ -50,7 +59,7 @@ import { Link } from 'react-router-dom';
           </div>
            </div>
 
-
+        </div>
            
         </div>
     );

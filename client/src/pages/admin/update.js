@@ -1,11 +1,21 @@
-
 import React from "react";
+import Button from 'react-bootstrap/Button';
+import { Link } from "react-router-dom";
 
 import './update.css'
  const Update =()=>{
     return(
+        <div >
+        <div className="head" style={{paddingBottom:"0px",paddingRight:"1150px"}}>
+        <Link  to="/home_admin">
+        <Button variant="primary" type="submit"  style={{backgroundColor:"black"}} >
+        Home
+        </Button>
+        </Link>  
+     </div>
       <div class="form-container">
-
+       
+             
       <form action="" method="post">
          <h3>Update Profile</h3>
          <input type="text" name="name"placeholder="Enter Your Name" ></input>
@@ -16,6 +26,7 @@ import './update.css'
          <button type="submit" class="btn btn-primary">Update</button>
       </form>
    
+   </div>
    </div>
     );
  };
