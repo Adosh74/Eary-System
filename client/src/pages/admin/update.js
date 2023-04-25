@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 import React from "react";
 
 import './update.css'
@@ -20,21 +20,3 @@ import './update.css'
     );
  };
  export default Update;
-=======
-import React from 'react';
-import Button from 'react-bootstrap/Button';
-import { Link } from 'react-router-dom';
-
-const Update = () => {
-  return (
-    <div>
-      <Link to="/home_admin">
-        <Button variant="primary" type="submit" className="submit">
-          Home
-        </Button>
-      </Link>
-    </div>
-  );
-};
-export default Update;
->>>>>>> c1546d3f78dc2a82a4b97ed0969decc16d04810d
