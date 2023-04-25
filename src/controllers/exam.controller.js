@@ -78,15 +78,28 @@ export const updateExam = async (req, res) => {
     const id = req.params.id;
 
     const exam = await model.exam.findOne({ where: { id: id } });
+    const examQuestions = exam.questions;
+
     if (exam === null)
       return res.status(404).json({ message: 'no exam found' });
 
     const { questions } = req.body;
 
-    const questionObj = { ...exam.questions, ...questions };
+    let arrOfQuestions = [];
+
+    if (examQuestions === null) {
+      arrOfQuestions = [questions];
+    } else {
+      if (examQuestions.length > 0) {
+        arrOfQuestions = [...examQuestions, questions];
+      } else {
+        arrOfQuestions = [examQuestions, questions];
+      }
+    }
+
     await model.exam.update(
       {
-        questions: questionObj,
+        questions: arrOfQuestions,
       },
       {
         where: { id: id },
