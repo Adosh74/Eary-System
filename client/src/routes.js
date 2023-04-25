@@ -3,16 +3,14 @@ import App from './App';
 import Login_user from './pages/authentication/Login_user';
 import Login_admin from './pages/authentication/Login_admin';
 import Register from './pages/authentication/Register';
-
 import Home_admin from './pages/home/Home_admin';
-
 import Update_user from './components/Update_user';
-import Update_admin from './components/Update_admin';
 import Home_user from './pages/home/Home_user';
-
 import Quiz from './pages/admin/Quiz';
-import Approve from './pages/admin/Approve';
-import Update from './pages/admin/Update';
+import Approve from './pages/admin/approve';
+import Update from './pages/admin/update';
+import Exam from './components/Exam';
+import History from './components/History';
 
 
 
@@ -43,10 +41,7 @@ export const routes = createBrowserRouter([
         element: <Register />,
       },
 
-      {
-        path: '/update_admin',
-        element: <Update_admin />,
-      },
+
       {
         path: '/update_user',
         element: <Update_user />,
@@ -62,6 +57,14 @@ export const routes = createBrowserRouter([
       {
         path: '/update',
         element: <Update />,
+      },
+      {
+        path: '/exam',
+        element: <Exam />,
+      },
+      {
+        path: '/history',
+        element: <History />,
       },
 
       {
