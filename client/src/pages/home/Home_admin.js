@@ -1,6 +1,7 @@
 import React from "react";
 import'./Home_admin.css'
 import { Link } from "react-router-dom";
+
 const Home_admin = () => {
     return (
          <div className="container">
@@ -9,8 +10,15 @@ const Home_admin = () => {
 <p>
   Here You can create and update Quiz
 </p>
+<<<<<<< HEAD
+<Link to="../admin/quiz" className="link-1">
+<button class="btn btn1"> 
+Quiz
+</button>
+=======
 <Link to="/quiz" className="link-1">
 <button class="btn btn1"> Quiz</button>
+>>>>>>> 92b7feb2d06ba14b85c49cbafcf6906f8e15c89d
 
 </Link>
 
@@ -27,7 +35,11 @@ const Home_admin = () => {
 <p>
   Here you can Update Your profile 
 </p>
+<<<<<<< HEAD
+<Link to="/quiz" className="link-3">
+=======
 <Link to="/update" className="link-3">
+>>>>>>> 92b7feb2d06ba14b85c49cbafcf6906f8e15c89d
 <button class="btn btn3"> Update</button>
 
 </Link>
