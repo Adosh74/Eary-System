@@ -5,9 +5,11 @@ import { Link } from "react-router-dom";
 import Alert from 'react-bootstrap/Alert';
 import './Login.css';
 
+
 export const Login_user = () => {
 
     return (
+    
         <div className="page_user">
         <Form>
             <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -35,7 +37,7 @@ export const Login_user = () => {
         Submit
         </Button>
         </Link>  
-        
+
             <div className="py-3" >
                 <Link className="create_button" to="/register">Create an new acount </Link>
             </div>

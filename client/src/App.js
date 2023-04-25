@@ -1,8 +1,8 @@
-import logo from './logo.svg';
 import './App.css';
 import Header from './shared/Header';
 import Footer from './shared/Footer';
-import { Outlet } from 'react-router-dom';
+import { Outlet, Route } from 'react-router-dom';
+import Home_user from './pages/home/Home_user';
 
 function App() {
   return (
@@ -10,6 +10,7 @@ function App() {
       <Header />
       <Outlet/>
       <Footer />
+      
     </div>
   );
 }

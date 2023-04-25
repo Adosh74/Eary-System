@@ -1,10 +1,10 @@
 import React from "react";
- const quiz =()=>{
+ const Quiz =()=>{
     return(
         <div>
 
-<h1>Quiz</h1>
+                   <h1>Quiz</h1>
         </div>
     );
  };
- export default quiz;
+ export default Quiz;
