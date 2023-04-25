@@ -1,0 +1,77 @@
+.containe{
+    padding: 0px;
+    margin: 0px;
+    font-family: sans-serif;
+    display: flex;
+    align-items: center;
+    height: 100vh;
+}
+.quizimg{
+    height: 330px;
+    width: 344px;
+    border-radius: 3px;
+    transition: .5s;
+
+}
+.edit{
+    width: 339px;
+    height: 330px;
+    border-radius: 3px;
+    transition: .5s;
+
+}
+.card{
+    height: 350px;
+    margin: 50px;
+    box-shadow: 5px 5px 20px black;
+    overflow: hidden;
+}
+.introo{
+    height: 70px;
+    width: 350px;
+    padding: 6px;
+    box-sizing: border-box;
+    position: absolute;
+    bottom: 0px;
+    background: rgb(27, 27, 27 ,.5);
+    color: white;
+    transition: .5s;
+}
+.g{
+    margin: 10px;
+    font-size: 40px;
+}
+.ll{
+    font-size: 20px;
+    margin: 79px;
+    visibility: hidden;
+    opacity: 0;
+}
+span{
+    font-weight: bold;
+}
+.card:hover{
+    cursor: pointer;
+
+}
+.card:hover .introo{
+height: 220px;
+bottom: 240px;
+background-color: black;
+}
+
+.card:hover .ll{
+    opacity: 1;
+    visibility: visible;
+
+}
+
+.card:hover .img{
+    transform: scale(1.1) rotate(-3deg);
+}
+.logo{
+    width: 500px;
+
+
+}
+

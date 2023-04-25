@@ -13,6 +13,7 @@ import './approve.css'
             <th>Student Name</th>
             <th>Email</th>
             <th>Phone</th>
+            <th>-</th>
             <th>Action</th>
         </tr>
     </thead>
