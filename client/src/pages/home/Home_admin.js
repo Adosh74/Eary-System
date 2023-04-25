@@ -9,10 +9,8 @@ const Home_admin = () => {
 <p>
   Here You can create and update Quiz
 </p>
-<Link to="../admin/quiz" className="link">
-<button className="btn">
-  Quiz
-</button>
+<Link to="./quiz" className="link-1">
+<button class="btn btn1"> Quiz</button>
 
 </Link>
 
@@ -20,24 +18,29 @@ const Home_admin = () => {
   Here you can approve their account 
 </p>
 
-<Link to="#" className="link">
-<button className="btn">
-  Approve
-</button>
+<Link to="#" className="link-2">
+<button class="btn btn2">Approve</button>
+
 </Link>
 <br></br>
 <br></br>
 <p>
   Here you can Update Your profile 
 </p>
-<Link to="#" className="link">
-<button className="btn" >
-  Update Your profile
-</button>
+<Link to="#" className="link-3">
+<button class="btn btn3"> Update</button>
+
 </Link>
 <br></br>
 <br></br>
 <br></br>
+<br></br>
+<br></br>
+<br></br><br></br>
+<br></br>
+<br></br><br></br><br></br>
+<br></br>
+
 
       </div>
          </div>
