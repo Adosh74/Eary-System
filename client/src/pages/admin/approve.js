@@ -42,5 +42,3 @@ import './approve.css'
     );
  };
  export default Approve;
-
- /**/
