@@ -1,9 +1,16 @@
 import React from "react";
+import Button from 'react-bootstrap/Button';
+import { Link } from "react-router-dom";
+
  const Update =()=>{
     return(
-        <div>
-
-                <h1>Update</h1>
+   <div>
+            <Link  to="/home_admin">
+        <Button variant="primary" type="submit"  className="submit">
+        Home
+        </Button>
+        </Link>  
+         
         </div>
     );
  };
