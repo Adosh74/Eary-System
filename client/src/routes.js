@@ -10,9 +10,11 @@ import Update_user from './components/Update_user';
 import Update_admin from './components/Update_admin';
 import Home_user from './pages/home/Home_user';
 
-import Approve from './pages/admin/approve';
-import Quiz from './pages/admin/quiz';
-import Update from './pages/admin/update';
+import Quiz from './pages/admin/Quiz';
+import Approve from './pages/admin/Approve';
+import Update from './pages/admin/Update';
+
+
 
 export const routes = createBrowserRouter([
   {
