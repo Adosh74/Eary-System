@@ -1,5 +1,5 @@
 import React from "react";
-
+import Button from 'react-bootstrap/Button';
 import Container from "react-bootstrap/Container";
 import Nav from 'react-bootstrap/Nav';
 import  Navbar  from "react-bootstrap/Navbar";
@@ -16,10 +16,11 @@ const Home_user = () => {
     };
     return (
       <>
+      
         <Navbar bg="dark" variant="dark">
            <Container> 
               <Nav className="me-auto">
-                <Link className="AD-header" to="/update_user">Update profile</Link>
+                <Link className="AD-header" to="/update_user" style={{paddingLeft:"8px"}}>Update profile</Link>
               </Nav>
               <Nav className="ms-auto">
               <Link className="nav-link" onClick={Logout}>Log out</Link>
@@ -29,6 +30,17 @@ const Home_user = () => {
            </Container>
   
         </Navbar>
+        
+        <section className="page_user">
+        <div className="d-grid gap-2">
+      <Button variant="primary" size="lg">
+        Take the hearing assistance exam
+      </Button>
+      <Button variant="secondary" size="lg">
+        Show history
+      </Button>
+    </div>
+    </section>
      </>
     );
 };
