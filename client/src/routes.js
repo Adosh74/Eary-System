@@ -60,7 +60,7 @@ export const routes = createBrowserRouter([
         element: <Quiz />,
       },
       {
-        path: '/updata',
+        path: '/update',
         element: <Update />,
       },
 
