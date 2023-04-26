@@ -8,12 +8,8 @@ import { useNavigate } from "react-router-dom";
 
 
 const Home_user = () => {
-  const navigate = useNavigate(); 
 
-    const Logout =() =>{
-      if (localStorage.get("/Home_user")) localStorage.removeItem("/Home_user");
-      navigate("/")
-    };
+    const Logout =() =>{ };
     return (
       <>
       
@@ -23,12 +19,9 @@ const Home_user = () => {
                 <Link to="/update_user" ><Button variant="outline-success"> Update profile</Button>{' '}</Link>
               </Nav>
               <Nav className="ms-auto">
-              <Link className="nav-link" onClick={Logout}>Log out</Link>
+              <Link to="/" className="nav-link" onClick={Logout}>Log out</Link>
               </Nav>
-            
-  
            </Container>
-  
         </Navbar>
         
         <section className="page_user">
