@@ -9,8 +9,8 @@ import { useNavigate } from "react-router-dom";
 
 const Home_user = () => {
   const navigate = useNavigate(); 
-    const Logout =() =>{
 
+    const Logout =() =>{
       if (localStorage.get("/Home_user")) localStorage.removeItem("/Home_user");
       navigate("/")
     };
@@ -18,9 +18,9 @@ const Home_user = () => {
       <>
       
         <Navbar bg="dark" variant="dark">
-           <Container> 
+           <Container>
               <Nav className="me-auto">
-                <Link className="AD-header" to="/update_user" style={{paddingLeft:"8px"}}>Update profile</Link>
+                <Link to="/update_user" ><Button variant="outline-success"> Update profile</Button>{' '}</Link>
               </Nav>
               <Nav className="ms-auto">
               <Link className="nav-link" onClick={Logout}>Log out</Link>
@@ -33,12 +33,16 @@ const Home_user = () => {
         
         <section className="page_user">
         <div className="d-grid gap-2">
+        <Link  to="/exam">
       <Button variant="primary" size="lg">
         Take the hearing assistance exam
       </Button>
+        </Link>
+        <Link  to="/history">
       <Button variant="secondary" size="lg">
-        Show history
+        Show history of Exams
       </Button>
+      </Link>
     </div>
     </section>
      </>
