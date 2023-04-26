@@ -1,8 +1,9 @@
-import model from './../models/index.model.js';
-import hashPassword from './../utilities/hashPassword.js';
-import config from '../../config/config.js';
 import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
+
+import config from '../../config/config.js';
+import model from './../models/index.model.js';
+import hashPassword from './../utilities/hashPassword.js';
 
 //**  +[1] get all users *//
 export const getUsers = async (_req, res) => {

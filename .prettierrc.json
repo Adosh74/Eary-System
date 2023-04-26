@@ -1,6 +1,12 @@
 {
-  "singleQuote": true,
+  "trailingComma": "es5",
+  "tabWidth": 2,
+  "useTabs": false,
   "semi": true,
-  "printWidth": 70,
-  "bracketSpacing": true
+  "singleQuote": true,
+  "arrowParens": "avoid",
+  "importOrder": ["^@core/(.*)$", "^@server/(.*)$", "^@ui/(.*)$", "^[./]"],
+  "importOrderSeparation": true,
+  "importOrderSortSpecifiers": true,
+  "printWidth": 70
 }
