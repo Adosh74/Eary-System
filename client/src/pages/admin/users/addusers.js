@@ -23,7 +23,7 @@ const Addusers = () => {
          <input type="password" name="password" required placeholder="enter your password"></input>
          <input type="text" name="phone" placeholder="Enter Your Phone Number"></input>
 
-         <button type="submit" class="btn btn-primary">Update</button>
+         <button type="submit" class="btn btn-primary">ADD</button>
       </form>
    
    </div>
