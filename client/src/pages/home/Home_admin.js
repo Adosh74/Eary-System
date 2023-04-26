@@ -23,6 +23,14 @@ const Home_admin = () => {
         <Link to="/update" className="link-3">
           <button class="btn btn3"> Update</button>
         </Link>
+
+        <br></br>
+        <br></br>
+
+        <p>Here you can see Users</p>
+        <Link to="/users" className="link-3">
+        <button class="btn btn1">Users</button>
+        </Link>
         <br></br>
         <br></br>
         <br></br>

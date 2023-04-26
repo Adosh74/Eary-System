@@ -6,14 +6,15 @@ import Register from './pages/authentication/Register';
 import Home_admin from './pages/home/Home_admin';
 import Update_user from './components/Update_user';
 import Home_user from './pages/home/Home_user';
-import Quiz from './pages/admin/quiz';
-import Approve from './pages/admin/approve';
+import Quiz from './pages/admin/quiz/quiz';
+import Approve from './pages/admin/approve/approve';
 import Update from './pages/admin/update';
 import Exam from './components/Exam';
 import History from './components/History';
-import Createquiz from './pages/admin/createquiz'
-import Editquiz from './pages/admin/editquiz'
-
+import Createquiz from './pages/admin/createquiz/createquiz'
+import Editquiz from './pages/admin/editquiz/editquiz'
+import Users from './pages/admin/users/users';
+import Addusers from './pages/admin/users/addusers';
 export const routes = createBrowserRouter([
   {
     path: '',
@@ -78,6 +79,14 @@ export const routes = createBrowserRouter([
       {
         path: '/editquiz',
         element: <Editquiz />,
+      },
+      {
+        path: '/users',
+        element: <Users/>,
+      },
+      {
+        path: '/addusers',
+        element: <Addusers/>,
       },
     ],
   },
