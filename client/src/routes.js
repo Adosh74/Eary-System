@@ -11,8 +11,8 @@ import Approve from './pages/admin/approve';
 import Update from './pages/admin/update';
 import Exam from './components/Exam';
 import History from './components/History';
-
-
+import Createquiz from './pages/admin/createquiz'
+import Editquiz from './pages/admin/editquiz'
 
 export const routes = createBrowserRouter([
   {
@@ -70,6 +70,14 @@ export const routes = createBrowserRouter([
       {
         path: '*',
         element: <Navigate to={'/'} />,
+      },
+      {
+        path: '/createquiz',
+        element: <Createquiz />,
+      },
+      {
+        path: '/editquiz',
+        element: <Editquiz />,
       },
     ],
   },

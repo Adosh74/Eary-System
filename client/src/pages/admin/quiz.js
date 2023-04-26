@@ -22,7 +22,7 @@ import Button from 'react-bootstrap/Button';
 
             <div class="card">
 
-                <Link to="./createquiz"> 
+                <Link to="/createquiz"> 
           <button>
                    <input type="Image" src={img1} alt="quiz" class="quizimg"></input> 
                    
@@ -44,7 +44,7 @@ import Button from 'react-bootstrap/Button';
 
                     <div class="card">
                    
-                <Link to ="#"> 
+                <Link to ="/editquiz"> 
           <button>
                    <input type="Image" src={img2} alt="quiz" class="edit"></input> 
                    
