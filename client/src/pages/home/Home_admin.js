@@ -14,7 +14,7 @@ const Home_admin = () => {
        <Container>
         
           <Nav className="ms-auto">
-          <Link to='/login_admin' className="nav-link" onClick={Logout}>Log out</Link>
+          <Link  className="nav-link" onClick={Logout}>Log out</Link>
           </Nav>
        </Container>
     </Navbar>

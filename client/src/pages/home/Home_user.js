@@ -19,7 +19,7 @@ const Home_user = () => {
                 <Link to="/update_user" ><Button variant="outline-success"> Update profile</Button>{' '}</Link>
               </Nav>
               <Nav className="ms-auto">
-              <Link to="/" className="nav-link" onClick={Logout}>Log out</Link>
+              <Link  className="nav-link" onClick={Logout}>Log out</Link>
               </Nav>
            </Container>
         </Navbar>
