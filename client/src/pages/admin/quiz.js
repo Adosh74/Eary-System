@@ -22,7 +22,7 @@ import Button from 'react-bootstrap/Button';
 
             <div class="card">
 
-                <Link to ="#"> 
+                <Link to="./createquiz"> 
           <button>
                    <input type="Image" src={img1} alt="quiz" class="quizimg"></input> 
                    
