@@ -22,7 +22,7 @@ const Createquiz = () => {
             
              <div class="card">
               <div class="details">
-        <div class="now-playing">Question 1</div>
+       
         <div class="track-art"></div>
         <div class="track-name">Track Name</div>
 
@@ -67,7 +67,7 @@ const Createquiz = () => {
         <li class="option"><span id="option2"></span><input type="text"></input></li>
 
     </ol>
-    <button class="btn btn-success btn-sm">accept</button>    
+     
         </div>
                 </div>
        
@@ -94,6 +94,9 @@ const Createquiz = () => {
                     {repeatedCode}
                  
                 </div>
+                     
+      <Button variant="outline-secondary">submit</Button>{' '}
+
             </div>
             </section>
             </div>
