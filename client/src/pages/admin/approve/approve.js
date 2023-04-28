@@ -34,7 +34,7 @@ import { Link } from "react-router-dom";
                         <td></td>
                         <td></td>
                         <td>
-                            <a href="#" class="btn btn-success btn-sm">accept</a>
+                            <button class="btn btn-success btn-sm">accept</button>
                             <form action="code.php" method="POST" class="d-inline">
                                 <button type="submit" name="delete_student" value="<?=$student['id'];?>" class="btn btn-danger btn-sm">Reject</button>
                             </form>
