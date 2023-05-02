@@ -1,20 +1,22 @@
-import { createBrowserRouter, Navigate } from 'react-router-dom';
+import { Navigate, createBrowserRouter } from 'react-router-dom';
+
 import App from './App';
-import Login_user from './pages/authentication/Login_user';
-import Login_admin from './pages/authentication/Login_admin';
-import Register from './pages/authentication/Register';
-import Home_admin from './pages/home/Home_admin';
-import Update_user from './components/Update_user';
-import Home_user from './pages/home/Home_user';
-import Quiz from './pages/admin/quiz/quiz';
-import Approve from './pages/admin/approve/approve';
-import Update from './pages/admin/update';
 import Exam from './components/Exam';
 import History from './components/History';
-import Createquiz from './pages/admin/createquiz/createquiz'
-import Editquiz from './pages/admin/editquiz/editquiz'
-import Users from './pages/admin/users/users';
+import Update_user from './components/Update_user';
+import Approve from './pages/admin/approve/approve';
+import Createquiz from './pages/admin/createquiz/createquiz';
+import Editquiz from './pages/admin/editquiz/editquiz';
+import Quiz from './pages/admin/quiz/quiz';
+import Update from './pages/admin/update';
 import Addusers from './pages/admin/users/addusers';
+import Users from './pages/admin/users/users';
+import Login_admin from './pages/authentication/Login_admin';
+import Login_user from './pages/authentication/Login_user';
+import Register from './pages/authentication/Register';
+import Home_admin from './pages/home/Home_admin';
+import Home_user from './pages/home/Home_user';
+
 export const routes = createBrowserRouter([
   {
     path: '',
@@ -41,7 +43,6 @@ export const routes = createBrowserRouter([
         path: '/register',
         element: <Register />,
       },
-
 
       {
         path: '/update_user',
@@ -82,11 +83,11 @@ export const routes = createBrowserRouter([
       },
       {
         path: '/users',
-        element: <Users/>,
+        element: <Users />,
       },
       {
         path: '/addusers',
-        element: <Addusers/>,
+        element: <Addusers />,
       },
     ],
   },

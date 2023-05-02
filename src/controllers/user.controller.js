@@ -155,6 +155,12 @@ export const register = async (req, res) => {
       where: { email: data.email },
     });
 
+    if (!data.name || !data.password || !data.phone) {
+      return res.status(400).json({
+        message: 'Please enter complete information',
+      });
+    }
+
     if (email) {
       return res.status(400).json({
         message: 'this email already used',
