@@ -191,7 +191,7 @@ export const authenticate = async (req, res) => {
     const user = await model.user.findOne({
       where: { email: email },
     });
-    if (!email) {
+    if (!user) {
       return res.status(400).json({
         message: 'Email or Password wrong',
       });
