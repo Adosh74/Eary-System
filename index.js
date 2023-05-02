@@ -1,10 +1,12 @@
-import express from 'express';
 import bodyParser from 'body-parser';
-import helmet from 'helmet';
 import cors from 'cors';
+import express from 'express';
 import rateLimit from 'express-rate-limit';
-import routes from './src/routes/index.js';
+import helmet from 'helmet';
+
 import config from './config/config.js';
+import routes from './src/routes/index.js';
+
 // import sequelize from './config/database.js';
 // import * as models from './src/models/index.model.js';
 const app = express();
@@ -16,6 +18,7 @@ app.use(helmet()); // adds various HTTP headers to secure the app
 app.use(cors()); // enables Cross-Origin Resource Sharing
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+app.use(express.static('uploads'));
 
 // rate limiting middleware
 const limiter = rateLimit({
