@@ -219,6 +219,7 @@ export const authenticate = async (req, res) => {
     const token = jwt.sign(
       {
         user_id: user.id,
+        username: user.name,
         isAdmin: user.isAdmin,
       },
       config.tokenSecret
