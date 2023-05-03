@@ -274,3 +274,65 @@ export const approveUser = async (req, res) => {
     });
   }
 };
+
+//** +[9] admin login **/
+export const adminLogin = async (req, res) => {
+  try {
+    // get email and password from body
+    const { email, password } = req.body;
+
+    // check if email exists or not
+    const user = await model.user.findOne({
+      where: { email: email },
+    });
+    if (!user) {
+      return res.status(400).json({
+        message: 'Email or Password wrong',
+      });
+    }
+
+    // check validity of password
+    const isValidPassword = await bcrypt.compare(
+      `${password}${config.pepper}`,
+      user.password
+    );
+
+    if (!isValidPassword) {
+      return res.status(400).json({
+        message: 'Email or Password wrong',
+      });
+    }
+
+    // check user is admin
+    if (!user.isAdmin) {
+      return res.status(401).json({
+        message: 'You are not admin',
+      });
+    }
+
+    // check user is approved or not
+    if (!user.isActive) {
+      return res.status(404).json({
+        message: 'Waiting for admin approval',
+      });
+    }
+
+    const token = jwt.sign(
+      {
+        user_id: user.id,
+        username: user.name,
+        isAdmin: user.isAdmin,
+      },
+      config.tokenSecret
+    );
+
+    return res.status(200).json({
+      message: 'user logged in successfully',
+      token: token,
+    });
+  } catch (error) {
+    return res.status(500).json({
+      message: 'Internal Server Error',
+    });
+  }
+};

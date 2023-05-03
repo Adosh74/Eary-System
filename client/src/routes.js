@@ -12,7 +12,6 @@ import Update from './pages/admin/update';
 import Addusers from './pages/admin/users/addusers';
 import Users from './pages/admin/users/users';
 import Login_admin from './pages/authentication/Login_admin';
-import Login_user from './pages/authentication/Login_user';
 import Register from './pages/authentication/Register';
 import Home_admin from './pages/home/Home_admin';
 import Home_user from './pages/home/Home_user';
@@ -30,14 +29,9 @@ export const routes = createBrowserRouter([
         path: '/home_admin',
         element: <Home_admin />,
       },
-
-      {
-        path: '/login_admin',
-        element: <Login_admin />,
-      },
       {
         path: '/',
-        element: <Login_user />,
+        element: <Login_admin />,
       },
       {
         path: '/register',
