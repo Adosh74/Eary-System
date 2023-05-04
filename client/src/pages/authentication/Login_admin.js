@@ -6,7 +6,7 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { Link, useNavigate } from 'react-router-dom';
 
-import setAuthToken from './../../services/auth.service.js';
+import { setAuthToken } from './../../services/auth.service.js';
 import './Login.css';
 
 export const Login_admin = () => {

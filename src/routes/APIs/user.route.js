@@ -1,9 +1,10 @@
 import { Router } from 'express';
-import * as controller from './../../controllers/user.controller.js';
+
 import {
-  isAuthenticated,
   isAdmin,
+  isAuthenticated,
 } from '../../middleware/authentication.middleware.js';
+import * as controller from './../../controllers/user.controller.js';
 
 const routes = Router();
 
@@ -15,7 +16,7 @@ routes
 routes
   .route('/:id')
   .get(controller.getOneUser)
-  .put(controller.updateUser)
+  .put(isAuthenticated, controller.updateUser)
   .delete(controller.deleteUser);
 
 export default routes;
