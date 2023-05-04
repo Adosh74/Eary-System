@@ -38,7 +38,7 @@ const Update = () => {
         navigate('/home_admin');
       })
       .catch(err => {
-        console.log(err);
+        alert(`something went wrong`);
       });
   };
 
