@@ -16,6 +16,7 @@ import Login_user from './pages/authentication/Login_user';
 import Register from './pages/authentication/Register';
 import Home_admin from './pages/home/Home_admin';
 import Home_user from './pages/home/Home_user';
+import Multiple_exams from './components/Multiple_exams';
 
 export const routes = createBrowserRouter([
   {
@@ -88,6 +89,10 @@ export const routes = createBrowserRouter([
       {
         path: '/addusers',
         element: <Addusers />,
+      },
+      {
+        path: '/Multiple_exams',
+        element: <Multiple_exams />,
       },
     ],
   },

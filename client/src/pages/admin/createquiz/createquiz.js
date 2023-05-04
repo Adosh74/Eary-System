@@ -95,7 +95,7 @@ const Createquiz = () => {
                  
                 </div>
                      
-      <Button variant="outline-secondary">submit</Button>{' '}
+      <Button variant="outline-secondary">Save  [ Quiz ]</Button>{''}
 
             </div>
             </section>

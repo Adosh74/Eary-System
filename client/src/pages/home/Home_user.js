@@ -4,7 +4,7 @@ import Container from "react-bootstrap/Container";
 import Nav from 'react-bootstrap/Nav';
 import  Navbar  from "react-bootstrap/Navbar";
 import { Link } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
+
 
 
 const Home_user = () => {
@@ -26,7 +26,7 @@ const Home_user = () => {
         
         <section className="page_user">
         <div className="d-grid gap-2">
-        <Link  to="/exam">
+        <Link  to="/Multiple_exams">
       <Button variant="primary" size="lg">
         Take the hearing assistance exam
       </Button>

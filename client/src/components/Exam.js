@@ -1,11 +1,6 @@
 import React from "react";
-import Container from "react-bootstrap/Container";
-import Nav from 'react-bootstrap/Nav';
-import  Navbar  from "react-bootstrap/Navbar";
 import { Link } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
 import Button from 'react-bootstrap/Button';
-import Card from 'react-bootstrap/Card';
 import Form from 'react-bootstrap/Form';
 import Badge from 'react-bootstrap/Badge';
 
@@ -33,16 +28,16 @@ const Exam= () => {
             <option value="1">answare 1</option>
             <option value="2">answare 2</option>
             <option value="3">answare 3</option>
-            <option value="4">answare 4</option>
+           
             </Form.Select>
                     
             </div>
-            <Button variant="primary" size="lg">
-            submit
-        </Button>
+            <Button variant="primary">
+                <h4>submit</h4>
+           </Button>
         <div>
       <h1>
-      exam result <Badge bg="secondary"> #</Badge>
+      exam result <Badge bg="info"> # </Badge>
       </h1>
       </div>
         </div>
