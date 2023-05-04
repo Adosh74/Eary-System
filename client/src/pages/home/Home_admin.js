@@ -7,18 +7,9 @@ import { Link } from 'react-router-dom';
 import './Home_admin.css';
 
 const Home_admin = () => {
-  const Logout = () => {};
+  // const Logout = () => {};
   return (
     <>
-      <Navbar bg="dark" variant="dark">
-        <Container>
-          <Nav className="ms-auto">
-            <Link className="nav-link" onClick={Logout}>
-              Log out
-            </Link>
-          </Nav>
-        </Container>
-      </Navbar>
       <div className="container">
         <div className="intro">
           <h1 className="intro-title">Hello Admin</h1>
