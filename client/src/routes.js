@@ -86,7 +86,7 @@ export const routes = createBrowserRouter([
         element: <Multiple_exams />,
       },
       {
-        path: '/Add_question',
+        path: '/Add_question/:id',
         element: <Add_question />,
       },
     ],

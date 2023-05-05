@@ -21,7 +21,7 @@ const Users = () => {
         },
       })
       .then(data => {
-        setUsers({ result: data.data.users });
+        setUsers({ ...users, result: data.data.users });
         console.log(data.data.users);
       })
       .catch(err => {
