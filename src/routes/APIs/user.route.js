@@ -10,7 +10,7 @@ const routes = Router();
 
 routes
   .route('/')
-  .get(controller.getUsers)
+  .get(isAuthenticated, isAdmin, controller.getUsers)
   .post(controller.createUser);
 // routes with specific id
 routes

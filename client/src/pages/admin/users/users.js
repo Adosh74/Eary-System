@@ -1,53 +1,139 @@
-import React from 'react';
-import './users.css'
+import axios from 'axios';
+import React, { useEffect, useState } from 'react';
 import Button from 'react-bootstrap/Button';
-import { Link } from "react-router-dom";
-const Users  = () => {
-    return(
-        <div >
-        <div className="head" style={{paddingBottom:"0px",paddingRight:"1150px"}}>
-           <Link  to="/addusers">
-           <Button variant="primary" type="submit"  style={{backgroundColor:"black"}} >
-           Add Users
-           </Button>
-           </Link>  
-        </div>
-<div class="card-body">
+import { Link } from 'react-router-dom';
 
-<table class="table table-bordered table-striped">
-<thead>
-   <tr>
-       <th>ID</th>
-       <th>Student Name</th>
-       <th>Email</th>
-       <th>Phone</th>
-       <th>-</th>
-       <th>Action</th>
-   </tr>
-</thead>
-<tbody>
-  
-               <tr>
-                   <td></td>
-                   <td></td>
-                   <td></td>
-                   <td></td>
-                   <td></td>
-                   <td>
-                       <button  class="btn btn-success btn-sm">Update</button>
-                       <form action="code.php" method="POST" class="d-inline">
-                           <button type="submit" name="delete_student" value="<?=$student['id'];?>" class="btn btn-danger btn-sm">Delete</button>
-                       </form>
-                   </td>
-               </tr>
-            
-   
-   </tbody>
-</table>
+import { getAuthToken } from '../../../services/auth.service';
+import './users.css';
 
-</div>
-</div>
-    );
+const Users = () => {
+  const { token, user } = getAuthToken();
+  const [users, setUsers] = useState({
+    result: [],
+    update: false,
+  });
 
+  useEffect(() => {
+    axios
+      .get('http://localhost:3000/user', {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      })
+      .then(data => {
+        setUsers({ result: data.data.users });
+        console.log(data.data.users);
+      })
+      .catch(err => {
+        alert('some error occurred1');
+        console.log(err);
+      });
+  }, [users.update]);
+
+  return (
+    <div>
+      <div
+        className="head"
+        style={{ paddingBottom: '0px', paddingRight: '1150px' }}
+      >
+        <Link to="/addusers">
+          <Button
+            variant="primary"
+            type="submit"
+            style={{ backgroundColor: 'black' }}
+          >
+            Add Users
+          </Button>
+        </Link>
+      </div>
+      <div className="card-body">
+        <table className="table table-bordered table-striped">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Student Name</th>
+              <th>Email</th>
+              <th>Phone</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            {users.result.map(user => {
+              return (
+                <tr key={user.id}>
+                  <td>{user.id}</td>
+                  <td>{user.name}</td>
+                  <td>{user.email}</td>
+                  <td>{user.phone}</td>
+                  <td>
+                    {!user.isActive && (
+                      <button
+                        onClick={() => {
+                          axios
+                            .put(
+                              `http://localhost:3000/approve/${user.id}`,
+                              {
+                                key: 'value',
+                              },
+                              {
+                                headers: {
+                                  Authorization: `Bearer ${token}`,
+                                },
+                              }
+                            )
+                            .then(data => {
+                              alert(data.data.message);
+                              setUsers({
+                                ...users,
+                                update: !users.update,
+                              });
+                            })
+                            .catch(err => console.log(err));
+                        }}
+                        className="btn btn-success btn-sm"
+                      >
+                        approve
+                      </button>
+                    )}
+                    <button className="btn btn-success btn-sm">
+                      Update
+                    </button>
+
+                    <button
+                      onClick={() => {
+                        axios
+                          .delete(
+                            `http://localhost:3000/user/${user.id}`,
+                            {
+                              headers: {
+                                Authorization: `Bearer ${token}`,
+                              },
+                            }
+                          )
+                          .then(data => {
+                            alert(data.data.message);
+                            setUsers({
+                              ...users,
+                              update: !users.update,
+                            });
+                          })
+                          .catch(err => {
+                            alert('some error happen');
+                            console.log(err);
+                          });
+                      }}
+                      className="btn btn-danger btn-sm"
+                    >
+                      Delete
+                    </button>
+                  </td>
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  );
 };
 export default Users;

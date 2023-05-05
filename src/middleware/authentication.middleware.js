@@ -22,7 +22,9 @@ export const isAuthenticated = (req, res, next) => {
 
 //** +[2] check if admin **//
 export const isAdmin = (req, res, next) => {
-  const token = req.header('x-auth-token');
+  const { authorization } = req.headers;
+  const token = authorization && authorization.split(' ')[1];
+
   if (!token) return res.status(401).send('access denied');
 
   try {
