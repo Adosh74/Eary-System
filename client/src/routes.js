@@ -16,6 +16,7 @@ import Register from './pages/authentication/Register';
 import Home_admin from './pages/home/Home_admin';
 import Home_user from './pages/home/Home_user';
 import Multiple_exams from './components/Multiple_exams';
+import Add_question from './pages/admin/editquiz/Add_question';
 
 export const routes = createBrowserRouter([
   {
@@ -87,6 +88,10 @@ export const routes = createBrowserRouter([
       {
         path: '/Multiple_exams',
         element: <Multiple_exams />,
+      },
+      {
+        path: '/Add_question',
+        element: <Add_question />,
       },
     ],
   },

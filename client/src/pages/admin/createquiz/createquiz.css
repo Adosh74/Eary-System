@@ -8,6 +8,11 @@
    background-color: rgb(73, 69, 69);
   
   }
+  .player_edit {
+    text-align: center;
+    min-height: 100vh;
+   background-color: rgb(73, 69, 69);
+  }
    
   .details {
     display: flex;
