@@ -91,11 +91,11 @@ const Users = () => {
                             .catch(err => console.log(err));
                         }}
                         className="btn btn-success btn-sm"
-                      >
+                        style={{color:"black"}} >
                         approve
                       </button>
                     )}
-                    <button className="btn btn-success btn-sm">
+                    <button className="btn btn-success btn-sm" style={{color:"black"}}>
                       Update
                     </button>
 
@@ -123,7 +123,7 @@ const Users = () => {
                           });
                       }}
                       className="btn btn-danger btn-sm"
-                    >
+                      style={{color:"black"}}>
                       Delete
                     </button>
                   </td>

@@ -1,10 +1,35 @@
-import React from "react";
+import React , {  useEffect, useState } from "react";
 import Button from 'react-bootstrap/Button';
 import { Link } from "react-router-dom";
+import axios from 'axios';
+
+
+import { getAuthToken } from "../services/auth.service";
 
 
 const Multiple_exams = () => {
-   
+  
+  const { token, user } = getAuthToken();
+
+  const [exams, setExams] = useState({
+    result: [],
+    update: false,
+  });
+
+  useEffect(() => {
+    axios
+      .get('http://localhost:3000/exam', {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      })
+      .then(data => {
+        setExams({ ...exams, result: data.data.data });
+        console.log(data.data.data);
+      })
+      .catch(err => console.error(err));
+  }, [exams.update]);
+
     return (
     <div> 
          <div className="head" style={{paddingBottom:"0px",paddingRight:"1150px"}}>
@@ -20,15 +45,17 @@ const Multiple_exams = () => {
                 <h2 class="title">Choose an exam</h2>
             <div class="content">
                     
-                  
-                <div class="card">
+            {exams.result.map(exam => {
+              return ( 
+                <div class="card_choose_Q" >
                 <Link  to="/Exam" >  
-                <Button variant="outline-danger" type="submit"   >
-                  Exam_name
+                <Button variant="outline-danger" type="submit"  >
+                {exam.name}
                 </Button>    
                 </Link>   
                 </div>
-                
+                 );
+                })}
 
             </div>
          </section>

@@ -78,7 +78,7 @@ const Addusers = () => {
             placeholder="Enter Your Phone Number"
           ></input>
 
-          <button type="submit" className="btn btn-primary">
+          <button type="submit" className="btn btn-primary" style={{color:"black"}}>
             ADD
           </button>
         </form>

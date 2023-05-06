@@ -82,7 +82,7 @@ const Update = () => {
             placeholder="Enter New Phone Number"
           ></input>
 
-          <button type="submit" className="btn btn-primary">
+          <button type="submit" className="btn btn-primary" style={{color:"black"}}>
             Update
           </button>
         </form>
