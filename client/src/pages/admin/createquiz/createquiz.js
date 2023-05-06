@@ -50,6 +50,8 @@ const Createquiz = () => {
           <form onSubmit={e => submit(e)}>
             <div className="content">
               <div className="details">
+              <div class="track-art"></div>
+              <div class="track-name">Track Name</div>
                 <Form.Group controlId="formFileSm" className="mb-3">
                   <Form.Label>Upload Audio</Form.Label>
                   <Form.Control
