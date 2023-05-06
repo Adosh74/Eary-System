@@ -37,8 +37,8 @@ const Editequiz = () => {
             <tr>
               <th>id</th>
               <th colSpan={2}>Exam Name</th>
-              <th>Edit Exam</th>
               <th>View Exam</th>
+              <th>Add question</th>
               <th>Delete Exam</th>
             </tr>
           </thead>
@@ -58,8 +58,8 @@ const Editequiz = () => {
                   </td>
                   <td>
                     {' '}
-                    <Link to="/Add_question">
-                      <Button variant="success">Edit</Button>{' '}
+                    <Link to={`/Add_question/${exam.id}`}>
+                      <Button variant="success">Add</Button>{' '}
                     </Link>{' '}
                   </td>
                   <td>
