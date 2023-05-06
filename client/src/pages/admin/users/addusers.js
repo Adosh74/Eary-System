@@ -1,33 +1,89 @@
-import React from 'react'; 
-import './addusers.css'
-import Button from 'react-bootstrap/Button';
-import { Link } from "react-router-dom";
+import axios from 'axios';
+import React, { useRef } from 'react';
+
+import { getAuthToken } from '../../../services/auth.service';
+import './addusers.css';
 
 const Addusers = () => {
-    return (
-        <div >
-        <div className="head" style={{paddingBottom:"0px",paddingRight:"1150px"}}>
-        <Link  to="/home_admin">
-        <Button variant="primary" type="submit"  style={{backgroundColor:"black"}} >
-        Home
-        </Button>
-        </Link>  
-     </div>
-      <div class="form-container">
-       
-             
-      <form action="" method="post">
-         <h3>ADD Users</h3>
-         <input type="text" name="name"placeholder="Enter Your Name" ></input>
-         <input type="email" name="email" required placeholder="enter your email"></input>
-         <input type="password" name="password" required placeholder="enter your password"></input>
-         <input type="text" name="phone" placeholder="Enter Your Phone Number"></input>
+  const { token } = getAuthToken();
 
-         <button type="submit" class="btn btn-primary">ADD</button>
-      </form>
-   
-   </div>
-   </div>
-    );
+  const form = useRef({
+    name: '',
+    email: '',
+    password: '',
+    phone: '',
+  });
+
+  const submit = e => {
+    e.preventDefault();
+    axios
+      .post(
+        `http://localhost:3000/user`,
+        {
+          name: form.current.name.value,
+          email: form.current.email.value,
+          password: form.current.password.value,
+          phone: form.current.phone.value,
+        },
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      )
+      .then(data => {
+        alert(data.data.message);
+      })
+      .catch(err => {
+        alert(`something went wrong`);
+      });
+  };
+  return (
+    <div>
+      <div className="form-container">
+        <form onSubmit={e => submit(e)}>
+          <h3>ADD Users</h3>
+          <input
+            ref={val => {
+              form.current.name = val;
+            }}
+            type="text"
+            name="name"
+            placeholder="Enter Your Name"
+          ></input>
+          <input
+            ref={val => {
+              form.current.email = val;
+            }}
+            type="email"
+            name="email"
+            required
+            placeholder="enter your email"
+          ></input>
+          <input
+            ref={val => {
+              form.current.password = val;
+            }}
+            type="password"
+            name="password"
+            required
+            placeholder="enter your password"
+          ></input>
+          <input
+            ref={val => {
+              form.current.phone = val;
+            }}
+            type="text"
+            name="phone"
+            placeholder="Enter Your Phone Number"
+          ></input>
+
+          <button type="submit" className="btn btn-primary">
+            ADD
+          </button>
+        </form>
+      </div>
+    </div>
+  );
 };
 export default Addusers;

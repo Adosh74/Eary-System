@@ -11,7 +11,7 @@ const routes = Router();
 routes
   .route('/')
   .get(isAuthenticated, isAdmin, controller.getUsers)
-  .post(controller.createUser);
+  .post(isAuthenticated, isAdmin, controller.createUser);
 // routes with specific id
 routes
   .route('/:id')
