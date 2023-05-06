@@ -3,6 +3,7 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import { Link, useNavigate } from 'react-router-dom';
+import Button from 'react-bootstrap/Button';
 
 import {
   getAuthToken,
@@ -28,9 +29,11 @@ const Header = () => {
           </Navbar.Brand>
           {user && !user.isAdmin && (
             <Nav className="me-auto">
-              <Link className="AD-header" to="/home_user">
-                Home
-              </Link>
+             <Link  to="/home_user">
+        <Button variant="primary" type="submit"  style={{backgroundColor:"black"}} >
+           Home
+        </Button>
+        </Link>  
             </Nav>
           )}
           {user && user.isAdmin && (

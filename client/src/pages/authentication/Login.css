@@ -8,6 +8,14 @@
     color: white;
     background-image: linear-gradient(79deg, #7439db, #C66FBC 48%, #F7944D);
   }
+  .page_user_history {
+    
+    display: flex;
+    min-height: 100vh;
+    align-items:flex-start;
+    color: white;
+    background-image: linear-gradient(79deg, #7439db, #C66FBC 48%, #F7944D);
+  }
   .page_admin {
     text-align: center;
     display: flex;

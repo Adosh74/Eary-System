@@ -14,13 +14,8 @@ const Exam= () => {
 
     return (
         <div>
-        <div className="head" style={{paddingBottom:"0px",paddingRight:"1150px"}}>
-        <Link  to="/home_user">
-        <Button variant="primary" type="submit"  style={{backgroundColor:"black"}} >
-           Home
-        </Button>
-        </Link>  
-        </div>
+       
+       
         <section className="page_user">
         <div>
         <section class="cards" id="services">

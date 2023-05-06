@@ -2,8 +2,6 @@ import React , {  useEffect, useState } from "react";
 import Button from 'react-bootstrap/Button';
 import { Link } from "react-router-dom";
 import axios from 'axios';
-
-
 import { getAuthToken } from "../services/auth.service";
 
 
@@ -32,13 +30,7 @@ const Multiple_exams = () => {
 
     return (
     <div> 
-         <div className="head" style={{paddingBottom:"0px",paddingRight:"1150px"}}>
-        <Link  to="/home_user">
-        <Button variant="primary" type="submit"  style={{backgroundColor:"black"}} >
-           Home
-        </Button>
-        </Link>  
-        </div>
+         
         <section className="page_user">
         <div>
          <section class="cards" id="services">
