@@ -34,7 +34,7 @@ const Multiple_exams = () => {
         <section className="page_user">
         <div>
          <section class="cards" id="services">
-                <h2 class="title">Choose an exam</h2>
+                <h2 class="title">Choose Quiz</h2>
             <div class="content">
                     
             {exams.result.map(exam => {

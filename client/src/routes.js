@@ -5,6 +5,7 @@ import Exam from './components/Exam';
 import History from './components/History';
 import Multiple_exams from './components/Multiple_exams';
 import Update_user from './components/Update_user';
+import View_quiz_user from './components/View_quiz_user';
 import Createquiz from './pages/admin/createquiz/createquiz';
 import Add_question from './pages/admin/editquiz/Add_question';
 import Editquiz from './pages/admin/editquiz/editquiz';
@@ -16,6 +17,7 @@ import Login_admin from './pages/authentication/Login_admin';
 import Register from './pages/authentication/Register';
 import Home_admin from './pages/home/Home_admin';
 import Home_user from './pages/home/Home_user';
+
 
 export const routes = createBrowserRouter([
   {
@@ -88,6 +90,10 @@ export const routes = createBrowserRouter([
       {
         path: '/Add_question/:id',
         element: <Add_question />,
+      },
+      {
+        path: '/View_quiz_user',
+        element: <View_quiz_user />,
       },
     ],
   },

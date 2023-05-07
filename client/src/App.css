@@ -73,38 +73,35 @@
 
 }
 
-.card{   
+.card_Q{   
   background-color: #fff;
   width: 30em;
   box-shadow: 0 5px 25px rgba(1, 1, 1, 50%);
   border-radius:  10px;
-
-  
- 
   transition: 1s ease;
- 
+  margin-top: 20px;
+  margin-bottom: 30px;
 }
-.card:hover{
+.card_Q:hover{
   transform: scale(1.08);
 
 }
-.card_histors{   
+.card_history{   
   background-color: #fff;
-  width: 25em;
+  width: 30em;
   box-shadow: 0 5px 25px rgba(1, 1, 1, 50%);
   border-radius:  10px;
-  padding: 100px;
-  margin: 15px;
   transition: 1s ease;
  
 }
 .card_choose_Q{   
-  background-color: rgb(27, 26, 26);
+  background-color: #fff;
   width: 15em;
   box-shadow: 0 5px 25px rgba(1, 1, 1, 50%);
   border-radius:  10px;
-  margin: 10px;
   transition: 1s ease;
+  margin-top: 20px;
+ margin-left: 20px;
 }
 .card_choose_Q:hover{
   transform: scale(1.08);

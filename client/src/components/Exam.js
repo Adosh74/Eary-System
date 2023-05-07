@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Button from 'react-bootstrap/Button';
-import Badge from 'react-bootstrap/Badge';
 import Spinner from 'react-bootstrap/Spinner';
 import ListGroup from 'react-bootstrap/ListGroup';
 import Tab from 'react-bootstrap/Tab';
@@ -20,7 +19,7 @@ const Exam= () => {
         <div>
         <section class="cards" id="services">
        
-        <h2 class="title">Quiz</h2>
+        <h2 class="title">#Quiz_name#</h2>
         <Spinner animation="border" variant="primary" />
       <Spinner animation="border" variant="secondary" />
       <Spinner animation="border" variant="success" />
@@ -29,9 +28,10 @@ const Exam= () => {
       <Spinner animation="border" variant="info" />
       <Spinner animation="border" variant="light" />
       <Spinner animation="border" variant="dark" />
+      <br/>  <br/>  <br/>  <br/>  <br/>  
 
         <div class="content">
-            <div class="card">
+            <div class="card_Q">
             <Accordion>
       <Accordion.Item eventKey="0">
         <Accordion.Header>question </Accordion.Header>

@@ -33,7 +33,7 @@ const History = () => {
                   <td colSpan={2} id="quiz_namer">        </td>
                   <td >
                     {' '}
-                    <Link to="/dfd">
+                    <Link to="/View_quiz_user">
                       <Button  variant="primary" type="submit"className="submit">View</Button>{' '}
                     </Link>{' '}
                   </td>
