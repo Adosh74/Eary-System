@@ -3,12 +3,14 @@ import React, { useRef, useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
+import { useNavigate } from 'react-router-dom';
 
 import { getAuthToken } from '../../../services/auth.service';
 import './createquiz.css';
 
 const Createquiz = () => {
   const { token, user } = getAuthToken();
+  const navigate = useNavigate();
 
   const form = useRef({
     name: '',
@@ -36,6 +38,7 @@ const Createquiz = () => {
       })
       .then(data => {
         alert(data.data.message);
+        navigate(`/Add_question/${data.data.data.id}`);
       })
       .catch(err => {
         alert('some error occurred');
@@ -50,8 +53,8 @@ const Createquiz = () => {
           <form onSubmit={e => submit(e)}>
             <div className="content">
               <div className="details">
-              <div class="track-art"></div>
-              <div class="track-name">Track Name</div>
+                <div className="track-art"></div>
+                <div className="track-name">Track Name</div>
                 <Form.Group controlId="formFileSm" className="mb-3">
                   <Form.Label>Upload Audio</Form.Label>
                   <Form.Control
