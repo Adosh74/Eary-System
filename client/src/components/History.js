@@ -3,6 +3,7 @@ import Button from 'react-bootstrap/Button';
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import Table from 'react-bootstrap/Table';
+import Badge from 'react-bootstrap/Badge';
 
 const History = () => {
     const navigate = useNavigate(); 
@@ -20,6 +21,7 @@ const History = () => {
               <th>id</th>
               <th colSpan={2}>Exam Name</th>
               <th>View Exam</th>
+              <th>Result</th>
            
             </tr>
           </thead>
@@ -31,9 +33,12 @@ const History = () => {
                   <td colSpan={2} id="quiz_namer">        </td>
                   <td >
                     {' '}
-                    <Link to="/Add_question">
-                      <Button variant="success">View</Button>{' '}
+                    <Link to="/dfd">
+                      <Button  variant="primary" type="submit"className="submit">View</Button>{' '}
                     </Link>{' '}
+                  </td>
+                  <td>  
+                    <h1><Badge bg="info">  </Badge></h1>
                   </td>
                   
                  
