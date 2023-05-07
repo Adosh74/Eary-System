@@ -47,9 +47,7 @@ export const Login_admin = () => {
     <div className="page_admin">
       <Form onSubmit={e => submit(e)}>
         <Form.Group className="mb-3" controlId="formBasicEmail">
-          <Alert variant="danger" className=" p-1">
-            Error —check it out!
-          </Alert>
+          
           <Form.Label>Email address</Form.Label>
           <Form.Control
             type="email"

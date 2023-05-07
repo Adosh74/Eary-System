@@ -91,13 +91,15 @@ const Users = () => {
                             .catch(err => console.log(err));
                         }}
                         className="btn btn-success btn-sm"
-                      >
+                        style={{color:"black"}} >
                         approve
                       </button>
                     )}
-                    <button className="btn btn-success btn-sm">
+                    <Link to={`/update_user/${user.id}`}>
+                    <button className="btn btn-success btn-sm" style={{color:"black"}}>
                       Update
                     </button>
+                    </Link>
 
                     <button
                       onClick={() => {
@@ -123,7 +125,7 @@ const Users = () => {
                           });
                       }}
                       className="btn btn-danger btn-sm"
-                    >
+                      style={{color:"black"}}>
                       Delete
                     </button>
                   </td>

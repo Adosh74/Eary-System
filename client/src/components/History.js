@@ -2,6 +2,8 @@ import React from "react";
 import Button from 'react-bootstrap/Button';
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import Table from 'react-bootstrap/Table';
+import Badge from 'react-bootstrap/Badge';
 
 const History = () => {
     const navigate = useNavigate(); 
@@ -11,30 +13,41 @@ const History = () => {
       navigate("/")
     };
     return (
-        <div>
-        <div className="head" style={{paddingBottom:"0px",paddingRight:"1150px"}}>
-        <Link  to="/home_user">
-        <Button variant="primary" type="submit"  style={{backgroundColor:"black"}} >
-           Home
-        </Button>
-        </Link>  
-        </div>
-        <div>
-        <section className="page_user">
-        <div>
-        <section class="cards" id="services">
-        <h2 class="title">History</h2>
-        <div class="content">
-            <div class="card_histors">
-                
-              
-            </div>
-        </div>
-    </section>
-        </div>
-        </section>
+        <div className="page_user_history">
             
-        </div>
+         <Table striped bordered hover variant="dark">
+          <thead>
+            <tr>
+              <th>id</th>
+              <th colSpan={2}>Exam Name</th>
+              <th>View Exam</th>
+              <th>Result</th>
+           
+            </tr>
+          </thead>
+          <tbody>
+            
+           
+                <tr >
+                  <td id="quiz_number">                     </td>
+                  <td colSpan={2} id="quiz_namer">        </td>
+                  <td >
+                    {' '}
+                    <Link to="/View_quiz_user">
+                      <Button  variant="primary" type="submit"className="submit">View</Button>{' '}
+                    </Link>{' '}
+                  </td>
+                  <td>  
+                    <h1><Badge bg="info">  </Badge></h1>
+                  </td>
+                  
+                 
+                </tr>
+              
+           
+          </tbody>
+        </Table>
+       
     </div>
     );
 };
