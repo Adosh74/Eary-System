@@ -52,7 +52,7 @@ const Editequiz = () => {
                   </td>
                   <td>
                     {' '}
-                    <Link to="/Add_question">
+                    <Link to={`/View_quiz_admin/${exam.id}`}>
                       <Button variant="success">View</Button>{' '}
                     </Link>{' '}
                   </td>

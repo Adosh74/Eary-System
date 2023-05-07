@@ -9,6 +9,7 @@ import View_quiz_user from './components/View_quiz_user';
 import Createquiz from './pages/admin/createquiz/createquiz';
 import Add_question from './pages/admin/editquiz/Add_question';
 import Editquiz from './pages/admin/editquiz/editquiz';
+import View_quiz_admin from './pages/admin/editquiz/View_quiz_admin';
 import Quiz from './pages/admin/quiz/quiz';
 import Update from './pages/admin/update';
 import Addusers from './pages/admin/users/addusers';
@@ -42,7 +43,7 @@ export const routes = createBrowserRouter([
       },
 
       {
-        path: '/update_user',
+        path: '/update_user/:id',
         element: <Update_user />,
       },
 
@@ -92,8 +93,12 @@ export const routes = createBrowserRouter([
         element: <Add_question />,
       },
       {
-        path: '/View_quiz_user',
+        path: '/View_quiz_user/:id',
         element: <View_quiz_user />,
+      },
+      {
+        path: '/View_quiz_admin/:id',
+        element: <View_quiz_admin />,
       },
     ],
   },

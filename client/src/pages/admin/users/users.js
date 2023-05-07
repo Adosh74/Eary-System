@@ -95,9 +95,11 @@ const Users = () => {
                         approve
                       </button>
                     )}
+                    <Link to={`/update_user/${user.id}`}>
                     <button className="btn btn-success btn-sm" style={{color:"black"}}>
                       Update
                     </button>
+                    </Link>
 
                     <button
                       onClick={() => {
