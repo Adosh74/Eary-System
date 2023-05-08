@@ -30,6 +30,7 @@ export const createExam = async (req, res) => {
 
     const examObj = {
       name: data.name,
+      userId: req.user.user_id,
       audio_file: !req.file ? 'default.mp3' : req.file.filename,
       createdAt: new Date(),
     };

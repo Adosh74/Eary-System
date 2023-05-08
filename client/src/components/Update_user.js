@@ -1,13 +1,14 @@
 import axios from 'axios';
 import React, { useRef } from 'react';
 import Button from 'react-bootstrap/Button';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 
 import '../pages/admin/update.css';
 import '../pages/authentication/Login.css';
 import { getAuthToken } from '../services/auth.service';
 
 const Update_user = () => {
+  const { id } = useParams();
   const { token, user } = getAuthToken();
   const navigate = useNavigate();
 
@@ -22,7 +23,7 @@ const Update_user = () => {
     e.preventDefault();
     axios
       .put(
-        `http://localhost:3000/user/${user.user_id}`,
+        `http://localhost:3000/user/${id}`,
         {
           name: form.current.name.value,
           email: form.current.email.value,
@@ -37,7 +38,7 @@ const Update_user = () => {
       )
       .then(data => {
         alert(data.data.message);
-        navigate('/home_user');
+        navigate('/users');
       })
       .catch(err => {
         alert(`something went wrong`);

@@ -8,9 +8,6 @@ export default (db, type) => {
     answer: {
       type: type.JSON,
     },
-    exam_id: {
-      type: type.INTEGER,
-    },
     user_id: {
       type: type.INTEGER,
     },

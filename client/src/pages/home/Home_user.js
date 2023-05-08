@@ -1,6 +1,5 @@
 import React from 'react';
 import Button from 'react-bootstrap/Button';
-
 import { Link } from 'react-router-dom';
 
 import { getAuthToken } from '../../services/auth.service';
@@ -10,6 +9,11 @@ const Home_user = () => {
 
   return (
     <>
+      <div>
+        <audio controls>
+          <source src="./../../../../uploads/default.mp3" />
+        </audio>
+      </div>
       <section className="page_user">
         <div className="d-grid gap-2">
           <h2>Hello {user.username}</h2>
