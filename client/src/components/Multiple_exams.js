@@ -1,12 +1,11 @@
-import React , {  useEffect, useState } from "react";
-import Button from 'react-bootstrap/Button';
-import { Link } from "react-router-dom";
 import axios from 'axios';
-import { getAuthToken } from "../services/auth.service";
+import React, { useEffect, useState } from 'react';
+import Button from 'react-bootstrap/Button';
+import { Link } from 'react-router-dom';
 
+import { getAuthToken } from '../services/auth.service';
 
 const Multiple_exams = () => {
-  
   const { token, user } = getAuthToken();
 
   const [exams, setExams] = useState({
@@ -28,32 +27,29 @@ const Multiple_exams = () => {
       .catch(err => console.error(err));
   }, [exams.update]);
 
-    return (
-    <div> 
-         
-        <section className="page_user">
+  return (
+    <div>
+      <section className="page_user">
         <div>
-         <section class="cards" id="services">
-                <h2 class="title">Choose Quiz</h2>
-            <div class="content">
-                    
-            {exams.result.map(exam => {
-              return ( 
-                <div class="card_choose_Q" >
-                <Link  to="/Exam" >  
-                <Button variant="outline-danger" type="submit"  >
-                {exam.name}
-                </Button>    
-                </Link>   
-                </div>
-                 );
-                })}
-
+          <section className="cards" id="services">
+            <h2 className="title">Choose Quiz</h2>
+            <div className="content">
+              {exams.result.map((exam, index) => {
+                return (
+                  <div key={index} className="card_choose_Q">
+                    <Link to={`/Exam/${exam.id}`}>
+                      <Button variant="outline-danger" type="submit">
+                        {exam.name}
+                      </Button>
+                    </Link>
+                  </div>
+                );
+              })}
             </div>
-         </section>
+          </section>
         </div>
-        </section>
+      </section>
     </div>
-    );
+  );
 };
-  export default Multiple_exams;
+export default Multiple_exams;

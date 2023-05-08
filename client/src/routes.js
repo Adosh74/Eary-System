@@ -8,8 +8,8 @@ import Update_user from './components/Update_user';
 import View_quiz_user from './components/View_quiz_user';
 import Createquiz from './pages/admin/createquiz/createquiz';
 import Add_question from './pages/admin/editquiz/Add_question';
-import Editquiz from './pages/admin/editquiz/editquiz';
 import View_quiz_admin from './pages/admin/editquiz/View_quiz_admin';
+import Editquiz from './pages/admin/editquiz/editquiz';
 import Quiz from './pages/admin/quiz/quiz';
 import Update from './pages/admin/update';
 import Addusers from './pages/admin/users/addusers';
@@ -18,7 +18,6 @@ import Login_admin from './pages/authentication/Login_admin';
 import Register from './pages/authentication/Register';
 import Home_admin from './pages/home/Home_admin';
 import Home_user from './pages/home/Home_user';
-
 
 export const routes = createBrowserRouter([
   {
@@ -56,7 +55,7 @@ export const routes = createBrowserRouter([
         element: <Update />,
       },
       {
-        path: '/exam',
+        path: '/exam/:id',
         element: <Exam />,
       },
       {

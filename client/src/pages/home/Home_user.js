@@ -27,7 +27,7 @@ const Home_user = () => {
               Show history of Exams
             </Button>
           </Link>
-          <Link to="/update_user">
+          <Link to={`/update_user/${user.user_id}`}>
             <Button variant="outline-success">Update profile</Button>{' '}
           </Link>
         </div>

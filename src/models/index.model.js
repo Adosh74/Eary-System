@@ -24,7 +24,7 @@ answer.belongsTo(exam, {
 });
 exam.hasMany(answer);
 
-db.sync({ force: true }).then(() => {
+db.sync({ force: false }).then(() => {
   console.log('Tables Created!');
 });
 

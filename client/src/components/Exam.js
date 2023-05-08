@@ -1,19 +1,84 @@
-import React from 'react';
+import axios from 'axios';
+import React, { useEffect, useRef, useState } from 'react';
 import Accordion from 'react-bootstrap/Accordion';
 import Button from 'react-bootstrap/Button';
 import ListGroup from 'react-bootstrap/ListGroup';
 import Spinner from 'react-bootstrap/Spinner';
 import Tab from 'react-bootstrap/Tab';
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
+
+import { getAuthToken } from '../services/auth.service';
 
 const Exam = () => {
+  const { token } = getAuthToken();
+  const { id } = useParams();
+
+  const [answer, setAnswer] = useState({
+    result: [],
+    finished: false,
+    grade: 0,
+    update: false,
+  });
+
+  const [userA, setuserA] = useState([]);
+
+  const form = useRef({
+    userAnswer: [],
+  });
+
+  useEffect(() => {
+    axios
+      .get(`http://localhost:3000/exam/${id}`, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      })
+      .then(data => {
+        console.log(data.data.data);
+        setAnswer({ ...answer, result: data.data.data });
+      })
+      .catch(err => {
+        console.log(err);
+      });
+  }, [answer.finished]);
+
+  const submit = e => {
+    e.preventDefault();
+    console.log(userA);
+    axios
+      .post(
+        `http://localhost:3000/answer/${id}`,
+        {
+          answer: userA,
+        },
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      )
+      .then(data => {
+        alert('ok');
+
+        setAnswer({
+          ...answer,
+          grade: data.data.grade,
+          finished: true,
+        });
+        console.log(data.data.grade);
+      })
+      .catch(err => {
+        console.log(err);
+      });
+  };
+
   return (
     <>
       <div>
         <section className="page_user">
           <div>
-            <section class="cards" id="services">
-              <h2 class="title">#Quiz_name#</h2>
+            <section className="cards" id="services">
+              <h2 className="title">{answer.result.name}</h2>
               <Spinner animation="border" variant="primary" />
               <Spinner animation="border" variant="secondary" />
               <Spinner animation="border" variant="success" />
@@ -23,39 +88,78 @@ const Exam = () => {
               <Spinner animation="border" variant="light" />
               <Spinner animation="border" variant="dark" />
               <br /> <br /> <br /> <br /> <br />
-              <div class="content">
-                <audio
-                  src="./../../../uploads/default.mp3"
-                  controls
-                />
-                <div class="card_Q">
-                  <Accordion>
-                    <Accordion.Item eventKey="0">
-                      <Accordion.Header>question </Accordion.Header>
-                      <Accordion.Body>
-                        <Tab.Container id="list-group-tabs-example">
-                          <ListGroup>
-                            <ListGroup.Item action href="#answer_1">
-                              answer 1
-                            </ListGroup.Item>
+              {answer.finished && (
+                <h1>congratulation your grade is {answer.grade}</h1>
+              )}
+              {answer.result &&
+                !answer.finished &&
+                answer.result.questions && (
+                  <form onSubmit={e => submit(e)}>
+                    <div className="content">
+                      <div className="card_Q">
+                        {answer.result.questions.map((q, index) => {
+                          return (
+                            <Accordion key={index}>
+                              <Accordion.Item eventKey="0">
+                                <Accordion.Header>
+                                  {q.text}
+                                </Accordion.Header>
+                                <Accordion.Body>
+                                  <Tab.Container id="list-group-tabs-example">
+                                    <ListGroup>
+                                      <ListGroup.Item
+                                        onClick={() => {
+                                          setuserA([
+                                            ...userA,
+                                            q.options.one,
+                                          ]);
+                                          console.log(...userA);
+                                        }}
+                                      >
+                                        {q.options.one}
+                                      </ListGroup.Item>
 
-                            <ListGroup.Item action href="#answer_2">
-                              answer 2
-                            </ListGroup.Item>
+                                      <ListGroup.Item
+                                        onClick={() => {
+                                          setuserA([
+                                            ...userA,
+                                            q.options.two,
+                                          ]);
+                                          console.log(...userA);
+                                        }}
+                                      >
+                                        {q.options.two}
+                                      </ListGroup.Item>
 
-                            <ListGroup.Item action href="#answer_3">
-                              answer 3
-                            </ListGroup.Item>
-                          </ListGroup>
-                        </Tab.Container>
-                      </Accordion.Body>
-                    </Accordion.Item>
-                  </Accordion>
-                </div>
-                <Button variant="primary">
-                  <h4>submit</h4>
-                </Button>
-              </div>
+                                      <ListGroup.Item
+                                        onClick={() => {
+                                          setuserA([
+                                            ...userA,
+                                            q.options.three,
+                                          ]);
+                                          console.log(...userA);
+                                        }}
+                                      >
+                                        {q.options.three}
+                                      </ListGroup.Item>
+                                    </ListGroup>
+                                  </Tab.Container>
+                                </Accordion.Body>
+                              </Accordion.Item>
+                            </Accordion>
+                          );
+                        })}
+                      </div>
+                      <Button
+                        variant="primary"
+                        type="submit"
+                        className="submit"
+                      >
+                        <h4>submit</h4>
+                      </Button>
+                    </div>
+                  </form>
+                )}
             </section>
           </div>
         </section>

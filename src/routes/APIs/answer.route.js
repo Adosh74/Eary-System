@@ -15,4 +15,5 @@ routes
   .put(answerController.updateAnswer)
   .delete(answerController.deleteAnswer);
 
+routes.get('/history', isAuthenticated, answerController.getHistory);
 export default routes;

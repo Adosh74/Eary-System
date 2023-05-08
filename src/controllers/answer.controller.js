@@ -18,6 +18,11 @@ export const createAnswer = async (req, res) => {
       });
     }
     const exam = await model.exam.findOne({ where: { id: exam_id } });
+    if (!exam) {
+      return res.status(400).json({
+        message: 'Exam not found',
+      });
+    }
     let grade = 0;
 
     for (let i = 0; i < exam.questions.length; i++) {
@@ -27,7 +32,7 @@ export const createAnswer = async (req, res) => {
     }
     const answerObj = {
       answer: answer,
-      exam_id: exam_id,
+      examId: exam_id,
       user_id: user_id,
       grade: grade,
       createdAt: new Date(),
@@ -56,4 +61,39 @@ export const deleteAnswer = (req, res) => {
   res.json({
     message: 'delete Answers method working',
   });
+};
+
+//**  +[]show history **//
+
+export const getHistory = async (req, res) => {
+  // get user id
+  const user_id = req.user.user_id;
+  try {
+    // get history from db
+    const history = await model.answer.findAll({
+      include: {
+        model: model.exam,
+        attributes: ['name'],
+      },
+      where: {
+        user_id: user_id,
+      },
+    });
+
+    if (!history) {
+      return res.status(404).json({
+        message: 'No answer',
+      });
+    }
+
+    res.status(200).json({
+      message: 'history found',
+      data: history,
+    });
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({
+      message: 'internal error',
+    });
+  }
 };
