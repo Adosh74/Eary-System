@@ -9,11 +9,12 @@ const Home_user = () => {
 
   return (
     <>
-      <div>
-        <audio controls>
-          <source src="./../../../../uploads/default.mp3" />
-        </audio>
-      </div>
+      <audio controls>
+        <source
+          src="https://file-examples.com/storage/fe734802fc6459067bb6fad/2017/11/file_example_OOG_1MG.ogg"
+          type="audio/ogg"
+        />
+      </audio>
       <section className="page_user">
         <div className="d-grid gap-2">
           <h2>Hello {user.username}</h2>

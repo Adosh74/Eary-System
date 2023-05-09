@@ -45,33 +45,34 @@ const History = () => {
           </tr>
         </thead>
         <tbody>
-          {history.result.map((his, index) => {
-            return (
-              <tr key={index}>
-                <td id="quiz_number">{his.exam.name}</td>
-                <td colSpan={2} id="quiz_namer">
-                  {his.createdAt.toString()}
-                </td>
-                <td>
-                  <h1>
-                    <Badge bg="info">{his.grade}</Badge>
-                  </h1>
-                </td>
-                <td>
-                  {' '}
-                  <Link to="/View_quiz_user">
-                    <Button
-                      variant="primary"
-                      type="submit"
-                      className="submit"
-                    >
-                      View
-                    </Button>{' '}
-                  </Link>{' '}
-                </td>
-              </tr>
-            );
-          })}
+          {history.result.exam &&
+            history.result.map((his, index) => {
+              return (
+                <tr key={index}>
+                  <td id="quiz_number">{his.exam.name}</td>
+                  <td colSpan={2} id="quiz_namer">
+                    {his.createdAt.toString()}
+                  </td>
+                  <td>
+                    <h1>
+                      <Badge bg="info">{his.grade}</Badge>
+                    </h1>
+                  </td>
+                  <td>
+                    {' '}
+                    <Link to="/View_quiz_user">
+                      <Button
+                        variant="primary"
+                        type="submit"
+                        className="submit"
+                      >
+                        View
+                      </Button>{' '}
+                    </Link>{' '}
+                  </td>
+                </tr>
+              );
+            })}
         </tbody>
       </Table>
     </div>
