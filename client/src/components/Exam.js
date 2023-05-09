@@ -7,9 +7,30 @@ import Spinner from 'react-bootstrap/Spinner';
 import Tab from 'react-bootstrap/Tab';
 import { Link, useParams } from 'react-router-dom';
 
+
 import { getAuthToken } from '../services/auth.service';
 
 const Exam = () => {
+
+  const [isPlaying, setIsPlaying] = useState(false);
+  const audioRef = useRef(null);
+
+  useEffect(() => {
+    if (isPlaying) {
+      audioRef.current.play();
+    } else {
+      audioRef.current.pause();
+    }
+  }, [isPlaying]);
+
+  const handlePlay = () => {
+    setIsPlaying(true);
+  };
+
+  const handlePause = () => {
+    setIsPlaying(false);
+  };
+
   const { token } = getAuthToken();
   const { id } = useParams();
 
@@ -88,6 +109,14 @@ const Exam = () => {
               <Spinner animation="border" variant="light" />
               <Spinner animation="border" variant="dark" />
               <br /> <br /> <br /> <br /> <br />
+              <div>
+      <audio ref={audioRef} src="http://localhost:3000/default.mp3" />
+      {isPlaying ? (
+        <button type="submit" className="btn btn-primary" style={{color:"black"}} onClick={handlePause}>Pause</button>
+      ) : (
+        <button type="submit" className="btn btn-primary" style={{color:"black"}} onClick={handlePlay}>Audio Play</button>
+      )}
+      </div>
               {answer.finished && (
                 <h1>congratulation your grade is {answer.grade}</h1>
               )}
