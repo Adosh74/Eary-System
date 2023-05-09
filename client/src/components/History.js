@@ -45,7 +45,7 @@ const History = () => {
           </tr>
         </thead>
         <tbody>
-          {history.result.exam &&
+          {history.result.length > 0 &&
             history.result.map((his, index) => {
               return (
                 <tr key={index}>
