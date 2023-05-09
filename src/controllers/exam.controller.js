@@ -140,3 +140,49 @@ export const deleteExam = async (req, res) => {
     });
   }
 };
+
+export const removeQuestion = async (req, res) => {
+  // get exam id
+  const { examId } = req.params;
+  const { quesIndex } = req.params;
+
+  try {
+    const exam = await model.exam.findOne({
+      where: { id: examId },
+    });
+
+    if (!exam) {
+      return res.status(400).json({
+        message: 'Exam not found',
+      });
+    }
+    let arrOfQuestions = [];
+    // get questions
+    const questions = exam.questions;
+
+    if (questions.length > 1) {
+      arrOfQuestions = [...questions];
+      arrOfQuestions.splice(quesIndex, 1);
+    } else {
+      arrOfQuestions = null;
+    }
+
+    await model.exam.update(
+      {
+        questions: arrOfQuestions,
+      },
+      {
+        where: { id: examId },
+      }
+    );
+
+    return res.status(200).json({
+      message: 'question deleted successfully',
+    });
+  } catch (error) {
+    console.log(error);
+    return res.status(500).json({
+      message: 'internal error',
+    });
+  }
+};

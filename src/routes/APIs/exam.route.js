@@ -21,8 +21,15 @@ routes
 
 routes
   .route('/:id')
-  .get(examController.getOneExam)
+  .get(isAuthenticated, examController.getOneExam)
   .put(examController.updateExam)
   .delete(isAuthenticated, isAdmin, examController.deleteExam);
+
+routes.put(
+  '/:examId/:quesIndex',
+  isAuthenticated,
+  isAdmin,
+  examController.removeQuestion
+);
 
 export default routes;
