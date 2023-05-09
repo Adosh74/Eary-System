@@ -94,7 +94,7 @@ const Update_user = () => {
                 placeholder="Enter Your Phone Number"
               ></input>
 
-              <button type="submit" className="btn btn-primary">
+              <button type="submit" className="btn btn-primary" style={{color:"black"}} >
                 Update
               </button>
             </form>
