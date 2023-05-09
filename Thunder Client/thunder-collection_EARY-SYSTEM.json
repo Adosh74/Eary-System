@@ -1,7 +1,7 @@
 {
     "client": "Thunder Client",
     "collectionName": "EARY-SYSTEM",
-    "dateExported": "2023-04-23T09:45:05.536Z",
+    "dateExported": "2023-05-09T05:38:02.268Z",
     "version": "1.1",
     "folders": [
         {
@@ -50,8 +50,13 @@
             "method": "GET",
             "sortNum": 10000,
             "created": "2023-04-07T13:47:34.902Z",
-            "modified": "2023-04-21T11:40:41.488Z",
-            "headers": [],
+            "modified": "2023-04-24T14:37:06.982Z",
+            "headers": [
+                {
+                    "name": "x-auth-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjozLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE2ODIzNDcwMTJ9.sZwXz6gDoGWrzhF-qI9iUhnQ2Fyjoxx4up5rxCtQ5Ck"
+                }
+            ],
             "params": [],
             "tests": []
         },
@@ -64,12 +69,12 @@
             "method": "POST",
             "sortNum": 20000,
             "created": "2023-04-07T13:48:43.413Z",
-            "modified": "2023-04-21T12:01:52.859Z",
+            "modified": "2023-04-23T09:50:56.456Z",
             "headers": [],
             "params": [],
             "body": {
                 "type": "json",
-                "raw": "{\n  \"name\": \"shebl\",\n  \"email\": \"test@test.test\",\n  \"password\": \"123456\",\n  \"phone\": \"1234567\"\n}",
+                "raw": "{\n  \"name\": \"shebl\",\n  \"email\": \"test2@test2.test\",\n  \"password\": \"123456\",\n  \"phone\": \"1234567\"\n}",
                 "form": []
             },
             "tests": []
@@ -83,12 +88,17 @@
             "method": "PUT",
             "sortNum": 30000,
             "created": "2023-04-07T13:49:06.068Z",
-            "modified": "2023-04-21T12:27:12.913Z",
-            "headers": [],
+            "modified": "2023-05-04T15:48:23.373Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJ1c2VybmFtZSI6Ik1vaGFtZWQiLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE2ODMyMTUwMjJ9.4MOzuVDE53UbWxFcM0GyKRAF-hxbTr5qTo736ZPf9uo"
+                }
+            ],
             "params": [],
             "body": {
                 "type": "json",
-                "raw": "{\n  \"name\": \"adosh74\",\n  \"email\": \"adosha.com\",\n  \"phone\": \"01151119846\"\n}",
+                "raw": "{\n  \"name\": \"adosh74\",\n  \"password\": \"2123\",\n  \"email\": \"adosha.com\",\n  \"phone\": \"01151119846\"\n}",
                 "form": []
             },
             "tests": []
@@ -182,13 +192,23 @@
             "colId": "d3d057cf-6ff0-4908-9236-3f5a25b8224b",
             "containerId": "8b7e63c1-c018-42f9-94d9-2bf541403b31",
             "name": "create answer",
-            "url": "http://localhost:3000/answer",
+            "url": "[::1]:3000/answer/3",
             "method": "POST",
             "sortNum": 110000,
             "created": "2023-04-07T14:17:38.795Z",
-            "modified": "2023-04-07T14:17:45.806Z",
-            "headers": [],
+            "modified": "2023-05-08T14:25:55.324Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjozLCJ1c2VybmFtZSI6Ik1vaGFtZWQiLCJpc0FkbWluIjpmYWxzZSwiaWF0IjoxNjgzNTU1Njc0fQ.hYgXM6JvUAynSGYVBCwESDV9KrP0jpSu129gpzLPA_g"
+                }
+            ],
             "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"answer\": [\"one\", \"one\", \"one\", \"three\"]\n}",
+                "form": []
+            },
             "tests": []
         },
         {
@@ -254,13 +274,24 @@
             "method": "POST",
             "sortNum": 170000,
             "created": "2023-04-22T07:24:54.951Z",
-            "modified": "2023-04-22T07:25:46.886Z",
+            "modified": "2023-05-05T12:15:38.196Z",
             "headers": [],
             "params": [],
             "body": {
-                "type": "json",
-                "raw": "{\n  \"name\": \"Internet Application\"\n}",
-                "form": []
+                "type": "formdata",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "name",
+                        "value": "IS"
+                    }
+                ],
+                "files": [
+                    {
+                        "name": "audio_file",
+                        "value": "c:\\Users\\Ahmed Shebl\\Desktop\\code.png"
+                    }
+                ]
             },
             "tests": []
         },
@@ -269,11 +300,11 @@
             "colId": "d3d057cf-6ff0-4908-9236-3f5a25b8224b",
             "containerId": "5011d16b-57b5-4440-b4a8-624b2afe8e55",
             "name": "get specific exam",
-            "url": "[::1]:3000/exam/1",
+            "url": "[::1]:3000/exam/3",
             "method": "GET",
             "sortNum": 180000,
             "created": "2023-04-22T07:34:48.873Z",
-            "modified": "2023-04-22T07:35:07.026Z",
+            "modified": "2023-05-08T15:13:42.902Z",
             "headers": [],
             "params": [],
             "tests": []
@@ -287,12 +318,12 @@
             "method": "PUT",
             "sortNum": 190000,
             "created": "2023-04-22T08:10:07.597Z",
-            "modified": "2023-04-22T08:46:18.292Z",
+            "modified": "2023-04-25T09:27:33.537Z",
             "headers": [],
             "params": [],
             "body": {
                 "type": "json",
-                "raw": "{\n  \"questions\": {\n    \"text\": \"asd is125553\",\n    \"opions\": {\n      \"one\": \"physical component\"\n    },\n    \"answer\": \"one\"\n  }\n}",
+                "raw": "{\n  \"questions\": {\n    \"text\": \"asd is1255zcx53\",\n    \"opions\": {\n      \"one\": \"physical component\"\n    },\n    \"answer\": \"one\"\n  }\n}",
                 "form": []
             },
             "tests": []
@@ -302,11 +333,11 @@
             "colId": "d3d057cf-6ff0-4908-9236-3f5a25b8224b",
             "containerId": "5011d16b-57b5-4440-b4a8-624b2afe8e55",
             "name": "delete exam",
-            "url": "[::1]:3000/exam/1",
+            "url": "[::1]:3000/exam/2",
             "method": "DELETE",
             "sortNum": 200000,
             "created": "2023-04-22T09:00:17.424Z",
-            "modified": "2023-04-22T09:00:29.507Z",
+            "modified": "2023-04-24T15:51:35.676Z",
             "headers": [],
             "params": [],
             "tests": []
@@ -320,12 +351,12 @@
             "method": "POST",
             "sortNum": 220000,
             "created": "2023-04-22T13:47:40.105Z",
-            "modified": "2023-04-23T09:43:44.789Z",
+            "modified": "2023-05-02T11:57:00.753Z",
             "headers": [],
             "params": [],
             "body": {
                 "type": "json",
-                "raw": "{\n   \"email\": \"hamdysheblm@gmail.com\",\n  \"password\": \"123456\"\n}",
+                "raw": "{\n  \"email\": \"hamdysheblm1@gmail.com\",\n  \"password\": \"123456\"\n}",
                 "form": []
             },
             "tests": []
@@ -353,12 +384,12 @@
             "method": "POST",
             "sortNum": 240000,
             "created": "2023-04-23T09:10:37.520Z",
-            "modified": "2023-04-23T09:14:01.001Z",
+            "modified": "2023-05-02T18:42:27.908Z",
             "headers": [],
             "params": [],
             "body": {
                 "type": "json",
-                "raw": "{\n  \"name\": \"Mohamed Shebl\",\n  \"email\": \"hamdysheblm@gmail.com\",\n  \"password\": \"123456\",\n  \"phone\": \"01151119846\"\n}",
+                "raw": "{\n  \"name\": \"Mohamed Shebl\",\n  \"email\": \"hamdysheblm2@gmail.com\",\n  \"password\": \"123456\",\n  \"phone\": \"01151119846\"\n}",
                 "form": []
             },
             "tests": []
@@ -368,11 +399,49 @@
             "colId": "d3d057cf-6ff0-4908-9236-3f5a25b8224b",
             "containerId": "72b847d2-4ca1-4e12-a401-67baac309e1e",
             "name": "approve user",
-            "url": "[::1]:3000/approve/3",
+            "url": "[::1]:3000/approve/1",
             "method": "PUT",
             "sortNum": 250000,
             "created": "2023-04-23T09:34:13.660Z",
-            "modified": "2023-04-23T09:43:54.394Z",
+            "modified": "2023-05-05T02:30:05.519Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJ1c2VybmFtZSI6InRhc3Nza2siLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE2ODMyNTM1NzF9.4IjDSNbQVN5qYilK4HJr0pMO8wFxTdDguJBuExoNHLA"
+                }
+            ],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "a76f8cdb-5792-4359-a55b-81d16cad9246",
+            "colId": "d3d057cf-6ff0-4908-9236-3f5a25b8224b",
+            "containerId": "8b7e63c1-c018-42f9-94d9-2bf541403b31",
+            "name": "get history",
+            "url": "[::1]:3000/answer/history",
+            "method": "GET",
+            "sortNum": 260000,
+            "created": "2023-05-08T13:12:42.650Z",
+            "modified": "2023-05-08T13:13:29.099Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjozLCJ1c2VybmFtZSI6Ik1vaGFtZWQiLCJpc0FkbWluIjpmYWxzZSwiaWF0IjoxNjgzNTUwNzY0fQ.8HmM7BSSQHKofSUFOvhFUowJwNhpmws4NUxRCSjdUf4"
+                }
+            ],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "4d5d0c7a-3662-4e2f-bdaa-e235ccdbf884",
+            "colId": "d3d057cf-6ff0-4908-9236-3f5a25b8224b",
+            "containerId": "5011d16b-57b5-4440-b4a8-624b2afe8e55",
+            "name": "delet specific questions",
+            "url": "[::1]:3000/exam/3/0",
+            "method": "PUT",
+            "sortNum": 270000,
+            "created": "2023-05-08T23:26:46.519Z",
+            "modified": "2023-05-08T23:27:32.963Z",
             "headers": [],
             "params": [],
             "tests": []
