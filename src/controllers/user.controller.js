@@ -227,6 +227,7 @@ export const authenticate = async (req, res) => {
         user_id: user.id,
         username: user.name,
         isAdmin: user.isAdmin,
+        isActive: user.isActive,
       },
       config.tokenSecret
     );

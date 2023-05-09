@@ -14,8 +14,8 @@ const PORT = config.port ?? 3000;
 const HOST = config.host ?? 'localhost';
 
 //** middleware **/
-app.use(helmet()); // adds various HTTP headers to secure the app
 app.use(cors()); // enables Cross-Origin Resource Sharing
+// app.use(helmet({ crossOriginResourcePolicy: false })); // adds various HTTP headers to secure the app
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(express.static('uploads'));

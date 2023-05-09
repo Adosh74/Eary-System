@@ -31,7 +31,7 @@ export const createExam = async (req, res) => {
     const examObj = {
       name: data.name,
       userId: req.user.user_id,
-      audio_file: !req.file ? 'default.mp3' : req.file.filename,
+      audio_file: !req.file ? 'default.ogg' : req.file.filename,
       createdAt: new Date(),
     };
 
@@ -60,6 +60,7 @@ export const getOneExam = async (req, res) => {
         message: 'No exam found for this id',
       });
     }
+    exam.audio_file = `http://localhost:3000/${exam.audio_file}`;
 
     return res.status(200).json({
       message: 'exam found successfully',

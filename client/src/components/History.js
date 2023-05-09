@@ -41,7 +41,6 @@ const History = () => {
             <th>Exam Name</th>
             <th colSpan={2}>Time</th>
             <th>Grade</th>
-            <th>lsa</th>
           </tr>
         </thead>
         <tbody>
@@ -57,18 +56,6 @@ const History = () => {
                     <h1>
                       <Badge bg="info">{his.grade}</Badge>
                     </h1>
-                  </td>
-                  <td>
-                    {' '}
-                    <Link to="/View_quiz_user">
-                      <Button
-                        variant="primary"
-                        type="submit"
-                        className="submit"
-                      >
-                        View
-                      </Button>{' '}
-                    </Link>{' '}
                   </td>
                 </tr>
               );

@@ -78,14 +78,13 @@ const Register = () => {
             <Form.Label>Password</Form.Label>
             <Form.Control
               type="password"
-              placeholder="Password"
               ref={val => {
                 form.current.password = val;
               }}
             />
           </Form.Group>
 
-          <Form.Group className="mb-3" controlId="formBasicPassword">
+          <Form.Group className="mb-3">
             <Form.Label>Phone </Form.Label>
             <Form.Control
               type="integer"
