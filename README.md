@@ -1,7 +1,7 @@
 # Eary-System
 
 A project called **Eary** helps people check their hearing problems.
-**The project is now under development.**
+[more](https://adosh74.github.io/Eary-System/)
 
 # Usage 
  1. download dependencies.
