@@ -1,3 +1,4 @@
+import config from '../../config/config.js';
 import model from './../models/index.model.js';
 
 //* +[1] get all exams *//
@@ -7,6 +8,9 @@ export const getAllExams = async (_req, res) => {
     const exams = await model.exam.findAll();
 
     if (exams.length > 0) {
+      exams.map(exam => {
+        exam.audio_file = `http://${config.host}:${config.port}/${exam.audio_file}`;
+      });
       return res.status(200).json({
         message: 'Exams found successfully',
         data: exams,
@@ -60,7 +64,7 @@ export const getOneExam = async (req, res) => {
         message: 'No exam found for this id',
       });
     }
-    exam.audio_file = `http://localhost:3000/${exam.audio_file}`;
+    exam.audio_file = `http://${config.host}:${config.port}/${exam.audio_file}`;
 
     return res.status(200).json({
       message: 'exam found successfully',

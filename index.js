@@ -2,16 +2,16 @@ import bodyParser from 'body-parser';
 import cors from 'cors';
 import express from 'express';
 import rateLimit from 'express-rate-limit';
-import helmet from 'helmet';
 
+// import helmet from 'helmet';
 import config from './config/config.js';
+import { createAdminUser } from './src/controllers/user.controller.js';
 import routes from './src/routes/index.js';
 
-// import sequelize from './config/database.js';
-// import * as models from './src/models/index.model.js';
 const app = express();
 const PORT = config.port ?? 3000;
 const HOST = config.host ?? 'localhost';
+createAdminUser();
 
 //** middleware **/
 app.use(cors()); // enables Cross-Origin Resource Sharing

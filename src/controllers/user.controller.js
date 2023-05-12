@@ -337,3 +337,24 @@ export const adminLogin = async (req, res) => {
     });
   }
 };
+
+//** +[10] create admin user where app run **/
+export const createAdminUser = () => {
+  const adminUserObj = {
+    name: 'admin',
+    email: 'admin@admin.com',
+    password: hashPassword('123456'),
+    isActive: true,
+    isAdmin: true,
+    phone: '111111',
+  };
+  try {
+    if (
+      !model.user.findOne({ where: { email: adminUserObj.email } })
+    ) {
+      model.user.create(adminUserObj);
+    }
+  } catch (err) {
+    console.error(err);
+  }
+};
