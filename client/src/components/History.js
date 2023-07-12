@@ -15,6 +15,7 @@ const History = () => {
   const [history, setHistory] = useState({
     result: [],
     update: false,
+    found: false,
   });
 
   useEffect(() => {
@@ -27,6 +28,7 @@ const History = () => {
       .then(data => {
         setHistory({ ...history, result: data.data.data });
         console.log(data.data.data);
+        console.log(history.result);
       })
       .catch(err => {
         alert('something went wrong');
@@ -44,7 +46,7 @@ const History = () => {
           </tr>
         </thead>
         <tbody>
-          {history&&history.result.length > 0 &&
+          {history.result&&history.result.length > 0 &&
             history.result.map((his, index) => {
               return (
                 <tr key={index}>
