@@ -6,6 +6,7 @@ import AnswerModel from './schema/answer.model.js';
 import ExamModel from './schema/exam.model.js';
 //* importing models *//
 import UserModel from './schema/user.model.js';
+import { createAdminUser } from '../controllers/user.controller.js';
 
 const user = UserModel(db, Sequelize);
 const exam = ExamModel(db, Sequelize);
@@ -26,6 +27,7 @@ exam.hasMany(answer);
 
 db.sync({ force: false }).then(() => {
   console.log('Tables Created!');
+  createAdminUser();
 });
 
 export default {
