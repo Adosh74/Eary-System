@@ -1,0 +1,40 @@
+version: '3'
+services:
+  frontend:
+    build:
+      context: ./client
+      dockerfile: Dockerfile
+    ports:
+      - 3000:3000
+    networks:
+      - app-network
+    depends_on:
+      - mysql
+      - backend
+  backend:
+    build: .
+    ports:
+      - 4000:4000
+    env_file:
+      - docker.env
+    networks:
+      - app-network
+    depends_on:
+      - mysql
+  mysql:
+    image: mysql:latest
+    environment:
+      - MYSQL_ROOT_PASSWORD=root_password
+      - MYSQL_DATABASE=EARY_SYSTEM
+    ports:
+      - 3306:3306
+    volumes:
+      - db_data:/var/lib/mysql
+    networks:
+      - app-network
+volumes:
+  db_data:
+
+networks:
+  app-network:
+    driver: bridge

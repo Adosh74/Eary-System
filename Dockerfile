@@ -1,13 +1,16 @@
-FROM node:18
+FROM node
 
-WORKDIR /Eary-System
+# Create app directory
+WORKDIR /usr/src/app
 
-COPY package.json .
+# Install app dependencies
+COPY package*.json ./
 
 RUN npm install
 
+# Bundle app source
 COPY . .
 
-EXPOSE 3000
+EXPOSE 4000
 
 CMD [ "npm", "start" ]
