@@ -339,7 +339,7 @@ export const adminLogin = async (req, res) => {
 };
 
 //** +[10] create admin user where app run **/
-export const createAdminUser = () => {
+export const createAdminUser = async() => {
   const adminUserObj = {
     name: 'admin',
     email: 'admin@admin.com',
@@ -350,9 +350,19 @@ export const createAdminUser = () => {
   };
   try {
     if (
-      !model.user.findOne({ where: { email: adminUserObj.email } })
+      ! (await model.user.findOne({ where: { email: adminUserObj.email } }))
     ) {
-      model.user.create(adminUserObj);
+      await model.user.create(adminUserObj);
+      console.log('Admin user created successfully');
+      console.log('Email:', adminUserObj.email);
+      console.log('Password:', '123456');
+      
+      
+    }
+    else {
+      console.log('Admin user already exists');
+      console.log('Email:', adminUserObj.email);
+      console.log('Password:', '123456');
     }
   } catch (err) {
     console.error(err);

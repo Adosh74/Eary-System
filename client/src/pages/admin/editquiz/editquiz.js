@@ -8,7 +8,7 @@ import { getAuthToken } from '../../../services/auth.service';
 import '../createquiz/createquiz.css';
 
 const Editequiz = () => {
-  const { token, user } = getAuthToken();
+  const { token } = getAuthToken();
 
   const [exams, setExams] = useState({
     result: [],
@@ -17,7 +17,7 @@ const Editequiz = () => {
 
   useEffect(() => {
     axios
-      .get('http://localhost:3000/exam', {
+      .get('http://localhost:4000/exam', {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -27,7 +27,7 @@ const Editequiz = () => {
         console.log(data.data.data);
       })
       .catch(err => console.error(err));
-  }, [exams.update]);
+  }, [exams, exams.update, token]);
 
   return (
     <section className="player_edit ">
@@ -67,7 +67,7 @@ const Editequiz = () => {
                       onClick={() => {
                         axios
                           .delete(
-                            `http://localhost:3000/exam/${exam.id}`,
+                            `http://localhost:4000/exam/${exam.id}`,
                             {
                               headers: {
                                 Authorization: `Bearer ${token}`,

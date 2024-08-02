@@ -10,7 +10,7 @@ import '../createquiz/createquiz.css';
 
 const Add_question = () => {
   const { id } = useParams();
-  const { token, user } = getAuthToken();
+  const { token } = getAuthToken();
 
   const form = useRef({
     text: '',
@@ -24,7 +24,7 @@ const Add_question = () => {
     e.preventDefault();
     axios
       .put(
-        `http://localhost:3000/exam/${id}`,
+        `http://localhost:4000/exam/${id}`,
         {
           questions: {
             text: form.current.text.value,

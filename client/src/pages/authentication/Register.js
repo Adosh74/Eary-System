@@ -1,6 +1,5 @@
 import axios from 'axios';
-import React, { useEffect, useRef } from 'react';
-import { useState } from 'react';
+import React, {  useRef } from 'react';
 import Alert from 'react-bootstrap/Alert';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
@@ -9,11 +8,7 @@ import { useNavigate } from 'react-router-dom';
 const Register = () => {
   const navigate = useNavigate();
 
-  const [register, setRegister] = useState({
-    loading: true,
-    result: {},
-    err: null,
-  });
+  
 
   const form = useRef({
     name: '',
@@ -25,7 +20,7 @@ const Register = () => {
   const submit = e => {
     e.preventDefault();
     axios
-      .post('http://localhost:3000/register', {
+      .post('http://localhost:4000/register', {
         name: form.current.name.value,
         email: form.current.email.value,
         password: form.current.password.value,
@@ -39,7 +34,7 @@ const Register = () => {
       });
   };
   // useEffect(() => {
-  //   axios.post('http://localhost:3000/register')
+  //   axios.post('http://localhost:4000/register')
   //   .then((da))
   // }, []);
 

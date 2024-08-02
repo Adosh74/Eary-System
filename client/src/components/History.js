@@ -20,7 +20,7 @@ const History = () => {
 
   useEffect(() => {
     axios
-      .get('http://localhost:3000/answer/history', {
+      .get('http://localhost:4000/answer/history', {
         headers: {
           Authorization: `Bearer ${token}`,
         },

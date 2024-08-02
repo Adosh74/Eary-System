@@ -18,7 +18,7 @@ const Addusers = () => {
     e.preventDefault();
     axios
       .post(
-        `http://localhost:3000/user`,
+        `http://localhost:4000/user`,
         {
           name: form.current.name.value,
           email: form.current.email.value,

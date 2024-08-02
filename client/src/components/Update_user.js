@@ -23,7 +23,7 @@ const Update_user = () => {
     e.preventDefault();
     axios
       .put(
-        `http://localhost:3000/user/${id}`,
+        `http://localhost:4000/user/${id}`,
         {
           name: form.current.name.value,
           email: form.current.email.value,

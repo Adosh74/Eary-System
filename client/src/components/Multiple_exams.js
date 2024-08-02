@@ -15,7 +15,7 @@ const Multiple_exams = () => {
 
   useEffect(() => {
     axios
-      .get('http://localhost:3000/exam', {
+      .get('http://localhost:4000/exam', {
         headers: {
           Authorization: `Bearer ${token}`,
         },

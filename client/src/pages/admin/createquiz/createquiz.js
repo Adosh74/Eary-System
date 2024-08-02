@@ -1,5 +1,5 @@
 import axios from 'axios';
-import React, { useRef, useState } from 'react';
+import React, { useRef,  } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
@@ -9,7 +9,7 @@ import { getAuthToken } from '../../../services/auth.service';
 import './createquiz.css';
 
 const Createquiz = () => {
-  const { token, user } = getAuthToken();
+  const { token } = getAuthToken();
   const navigate = useNavigate();
 
   const form = useRef({
@@ -30,7 +30,7 @@ const Createquiz = () => {
     }
 
     axios
-      .post('http://localhost:3000/exam', formData, {
+      .post('http://localhost:4000/exam', formData, {
         headers: {
           Authorization: `Bearer ${token}`,
           'Content-Type': 'multipart/form-data',

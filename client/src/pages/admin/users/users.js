@@ -15,7 +15,7 @@ const Users = () => {
 
   useEffect(() => {
     axios
-      .get('http://localhost:3000/user', {
+      .get('http://localhost:4000/user', {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -71,7 +71,7 @@ const Users = () => {
                         onClick={() => {
                           axios
                             .put(
-                              `http://localhost:3000/approve/${user.id}`,
+                              `http://localhost:4000/approve/${user.id}`,
                               {
                                 key: 'value',
                               },
@@ -105,7 +105,7 @@ const Users = () => {
                       onClick={() => {
                         axios
                           .delete(
-                            `http://localhost:3000/user/${user.id}`,
+                            `http://localhost:4000/user/${user.id}`,
                             {
                               headers: {
                                 Authorization: `Bearer ${token}`,

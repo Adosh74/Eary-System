@@ -29,7 +29,7 @@ const Exam = () => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:3000/exam/${id}`, {
+      .get(`http://localhost:4000/exam/${id}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -52,7 +52,7 @@ const Exam = () => {
     console.log(userA);
     axios
       .post(
-        `http://localhost:3000/answer/${id}`,
+        `http://localhost:4000/answer/${id}`,
         {
           answer: userA,
         },

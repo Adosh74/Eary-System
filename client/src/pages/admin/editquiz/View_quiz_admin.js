@@ -1,8 +1,8 @@
 import axios from 'axios';
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Table from 'react-bootstrap/Table';
-import { Link, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 
 import { getAuthToken } from '../../../services/auth.service';
 
@@ -17,7 +17,7 @@ const View_quiz_admin = () => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:3000/exam/${id}`, {
+      .get(`http://localhost:4000/exam/${id}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -67,7 +67,7 @@ const View_quiz_admin = () => {
                         onClick={() => {
                           axios
                             .put(
-                              `http://localhost:3000/exam/${id}/${index}`,
+                              `http://localhost:4000/exam/${id}/${index}`,
                               {
                                 key: 'value',
                               },
