@@ -5,13 +5,11 @@ import rateLimit from 'express-rate-limit';
 
 // import helmet from 'helmet';
 import config from './config/config.js';
-import { createAdminUser } from './src/controllers/user.controller.js';
 import routes from './src/routes/index.js';
 
 const app = express();
 const PORT = config.port ?? 3000;
 const HOST = config.host ?? 'localhost';
-createAdminUser();
 
 //** middleware **/
 app.use(cors()); // enables Cross-Origin Resource Sharing
@@ -37,6 +35,6 @@ app.get('/', (_req, res) => {
   });
 });
 
-app.listen(PORT, HOST, () => {
+app.listen(PORT, '0.0.0.0', () => {
   console.log(`Serving running on http://${HOST}:${PORT}`);
 });
